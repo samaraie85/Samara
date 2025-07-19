@@ -1,0 +1,227 @@
+.partnersSection {
+    background: #181818;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.28);
+    padding: 64px 32px;
+    margin: 0;
+    width: 100%;
+}
+
+.partnersLabel {
+    color: #FFD700;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.partnersTitle {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 8px #000a;
+}
+
+.partnersGrid {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+}
+
+.partnerCard {
+    background: #232323;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+    padding: 0;
+    display: flex;
+    height: 250px;
+    width: 250px;
+    align-items: center;
+    justify-content: start;
+}
+
+.logoInfoWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.partnerInfo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    transform: translate(-50%, -50%) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(24, 24, 24, 0.97);
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+    padding: 18px 12px 12px 12px;
+    text-align: center;
+    transition: opacity 0.35s cubic-bezier(.4, 0, .2, 1), transform 0.35s cubic-bezier(.4, 0, .2, 1);
+    z-index: 2;
+}
+
+.logoInfoWrapper:hover .partnerInfo,
+.logoInfoWrapper:focus-within .partnerInfo {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) translateY(0);
+}
+
+.partnerLogo {
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    /* If your logos are dark, use the filter below for white effect: */
+    /* filter: brightness(0) invert(1) grayscale(0.1) contrast(1.2); */
+}
+
+.partnersSubtitle {
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 80px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.partnerName {
+    color: #FFD700;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.partnerDescription {
+    color: #ccc;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.partnerBadge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .partnersGrid {
+        gap: 30px;
+    }
+
+    .partnerCard {
+        min-width: 240px;
+        padding: 30px 20px;
+    }
+
+    .partnerLogo {
+        width: 80px;
+        height: 80px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partnersSection {
+        padding: 80px 0;
+    }
+
+    .partnersTitle {
+        font-size: 28px;
+    }
+
+    .partnersGrid {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .partnerCard {
+        min-width: 300px;
+        padding: 30px 20px;
+    }
+
+    .partnerLogo {
+        width: 90px;
+        height: 90px;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partnersSection {
+        padding: 32px 0;
+    }
+
+    .partnersLabel {
+        font-size: 12px;
+    }
+
+    .partnersTitle {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .partnersGrid {
+        gap: 16px;
+    }
+
+    .partnerCard {
+        min-width: 180px;
+        width: 90vw;
+        height: 120px;
+        padding: 10px 4px;
+    }
+
+    .partnerLogo {
+        width: 60px;
+        height: 60px;
+        padding: 4px;
+    }
+
+    .partnerName {
+        font-size: 14px;
+    }
+
+    .partnerDescription {
+        font-size: 11px;
+    }
+
+    .partnersSubtitle {
+        font-size: 12px;
+        margin-bottom: 32px;
+        max-width: 90vw;
+    }
+}

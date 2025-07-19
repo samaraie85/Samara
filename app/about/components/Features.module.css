@@ -1,0 +1,206 @@
+.features {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background: #000;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    margin: 0;
+}
+
+.decorLeft {
+    width: 180px;
+    min-width: 180px;
+    background: none;
+    background-image: url('../../assets/mandala-left.png');
+    /* You can replace this with your SVG or PNG */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+}
+
+.featuresGrid {
+    margin: 3rem 0 3rem 0;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.featureItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    flex: 1;
+    min-width: 220px;
+}
+
+.icon {
+    font-size: 4.5rem;
+    color: #FFD54A;
+    margin-bottom: 1.2rem;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-family: var(--font-aclonica), sans-serif;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+}
+
+.desc {
+    font-size: 1.25rem;
+    font-family: 'Geist', var(--font-geist-sans), sans-serif;
+    color: #fff;
+    opacity: 0.95;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .decorLeft {
+        display: none;
+    }
+
+    .featuresGrid {
+        margin: 2.5rem 0;
+        gap: 1.5rem;
+    }
+
+    .icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .desc {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .decorLeft {
+        width: 120px;
+        min-width: 120px;
+    }
+
+    .featuresGrid {
+        margin: 2rem 0;
+        gap: 1.2rem;
+    }
+
+    .featureItem {
+        min-width: 180px;
+    }
+
+    .icon {
+        font-size: 3.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .desc {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .decorLeft {
+        width: 100px;
+        min-width: 100px;
+        height: 100px;
+        background-position: center;
+    }
+
+    .featuresGrid {
+        margin: 1.5rem 0;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .featureItem {
+        min-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .icon {
+        font-size: 3rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .desc {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .decorLeft {
+        width: 80px;
+        min-width: 80px;
+        height: 80px;
+    }
+
+    .featuresGrid {
+        margin: 1rem 0;
+        gap: 1.5rem;
+    }
+
+    .icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .desc {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .decorLeft {
+        width: 60px;
+        min-width: 60px;
+        height: 60px;
+    }
+
+    .featuresGrid {
+        margin: 0.8rem 0;
+        gap: 1.2rem;
+    }
+
+    .icon {
+        font-size: 2rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .desc {
+        font-size: 0.85rem;
+    }
+}

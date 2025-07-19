@@ -1,0 +1,293 @@
+.hero {
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../../assets/about-pattren.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.textContent {
+    flex: 1;
+    height: 100%;
+    color: white;
+    font-family: var(--font-aclonica);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+.title {
+    font-size: 3em;
+
+}
+
+.subTitle {
+    font-size: 5em;
+    color: #FFD54A;
+}
+
+.socialIcons {
+    font-size: 2.5em;
+    display: flex;
+    gap: 1em;
+
+}
+
+.imageWrapper {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    animation: fadeInRight 1s ease-out forwards;
+}
+
+.imageWrapper {
+    opacity: 0;
+    animation: fadeInRight 1s ease-out 0.4s forwards;
+}
+
+.imageWrapper::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    right: -10px;
+    width: 550px;
+    height: 550px;
+    background: linear-gradient(to bottom, #f7c41e, #ff8400);
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.imageWrapper::before {
+    content: "";
+    position: absolute;
+    bottom: -180px;
+    right: -40px;
+    width: 600px;
+    height: 600px;
+    background: transparent;
+    border: 10px solid #FFD54A;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+/* Responsive styles */
+
+
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .textContent {
+        text-align: center;
+    }
+
+    .imageWrapper {
+        align-self: flex-end;
+        height: min-content;
+        flex: 0;
+    }
+
+    .imageWrapper img {
+        width: 300px;
+        height: 269px;
+        object-fit: cover;
+    }
+
+    .imageWrapper::after {
+        bottom: -115px;
+        right: -15px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .imageWrapper::before {
+        bottom: -150px;
+        right: -50px;
+        width: 350px;
+        height: 350px;
+    }
+
+    .socialIcons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .textContent {
+        text-align: center;
+    }
+
+    .imageWrapper {
+        align-self: flex-end;
+        height: min-content;
+        flex: 0;
+    }
+
+    .imageWrapper img {
+        width: 300px;
+        height: 269px;
+        object-fit: cover;
+    }
+
+    .imageWrapper::after {
+        bottom: -115px;
+        right: -15px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .imageWrapper::before {
+        bottom: -150px;
+        right: -50px;
+        width: 350px;
+        height: 350px;
+    }
+
+    .socialIcons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .textContent {
+        text-align: center;
+    }
+
+    .imageWrapper {
+        align-self: flex-end;
+        height: min-content;
+        flex: 0;
+    }
+
+    .imageWrapper img {
+        width: 300px;
+        height: 269px;
+        object-fit: cover;
+    }
+
+    .imageWrapper::after {
+        bottom: -115px;
+        right: -15px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .imageWrapper::before {
+        bottom: -150px;
+        right: -50px;
+        width: 350px;
+        height: 350px;
+    }
+
+    .socialIcons {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .hero {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .textContent {
+        text-align: center;
+    }
+
+    .imageWrapper {
+        align-self: flex-end;
+        height: min-content;
+        flex: 0;
+    }
+
+    .imageWrapper img {
+        width: 300px;
+        height: 269px;
+        object-fit: cover;
+    }
+
+    .imageWrapper::after {
+        bottom: -115px;
+        right: -15px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .imageWrapper::before {
+        bottom: -150px;
+        right: -50px;
+        width: 350px;
+        height: 350px;
+    }
+
+    .socialIcons {
+        justify-content: center;
+    }
+}

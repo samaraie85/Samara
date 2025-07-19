@@ -1,0 +1,206 @@
+.hotdeals {
+    background-color: #252525;
+    padding: 75px 100px;
+    width: 100%;
+}
+
+.hotdealsContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.hotdealsContent h1 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: var(--font-aclonica);
+    color: white;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.hotdealsContent h1 span {
+    color: #FFD700;
+}
+
+.viewAll {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.viewAll:hover {
+    transform: translateX(5px);
+}
+
+.arrowIcon {
+    color: #FFD700;
+    transition: transform 0.3s ease;
+}
+
+.viewAll:hover .arrowIcon {
+    transform: translateX(5px);
+}
+
+.hotdealsProducts {
+    width: 100%;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+}
+
+.loadingGif {
+    opacity: 0.8;
+}
+
+.error {
+    color: #ff6b6b;
+    text-align: center;
+    font-size: 16px;
+    padding: 40px;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.noProducts {
+    color: #ccc;
+    text-align: center;
+    font-size: 16px;
+    padding: 40px;
+    font-style: italic;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .hotdeals {
+        padding: 60px 80px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 28px;
+    }
+
+    .productGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hotdeals {
+        padding: 50px 60px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 26px;
+    }
+
+    .productGrid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hotdeals {
+        padding: 40px 30px;
+    }
+
+    .hotdealsContent {
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 24px;
+        padding-left: 0;
+    }
+
+    .productGrid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .loadingContainer {
+        height: 250px;
+    }
+
+    .error,
+    .noProducts {
+        padding: 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hotdeals {
+        padding: 30px 20px;
+    }
+
+    .hotdealsContent {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 22px;
+    }
+
+    .productGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .loadingContainer {
+        height: 200px;
+    }
+
+    .error,
+    .noProducts {
+        padding: 20px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hotdeals {
+        padding: 25px 15px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 20px;
+    }
+
+    .productGrid {
+        gap: 15px;
+    }
+
+    .loadingContainer {
+        height: 180px;
+    }
+
+    .error,
+    .noProducts {
+        padding: 15px;
+        font-size: 12px;
+    }
+}

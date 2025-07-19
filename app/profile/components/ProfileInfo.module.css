@@ -1,0 +1,125 @@
+.profileInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+}
+
+.profileCard {
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding-left: 30px;
+ }
+
+.profileInfo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -5px;
+    bottom: 0;
+    width: 200px;
+    background-image: url('../../assets/profile-side-pattren.png');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.profileImageSection {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileImageContainer {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profileImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.defaultAvatar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #F1B901, #CE9E00);
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.changeButton {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.changeButton:hover {
+    background-color: rgba(241, 185, 1, 0.8);
+}
+
+.profileDetails {
+    flex: 1;
+    padding: 30px;
+}
+
+.userName {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #CA7D00;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.infoIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+    color: #F1B901;
+}
+
+.infoItem p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .profileCard {
+        flex-direction: column;
+    }
+
+    .profileImageSection {
+        padding: 30px;
+    }
+}

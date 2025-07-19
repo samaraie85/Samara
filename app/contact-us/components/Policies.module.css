@@ -1,0 +1,314 @@
+.policies {
+    width: 100%;
+    min-height: 100vh;
+    background: #252525;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 70px 100px;
+    position: relative;
+}
+
+.policies h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: var(--font-aclonica);
+    margin-top: 40px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.policies h2 span {
+    color: #FFD54A;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.form {
+    width: 80%;
+    background-color: #090909;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 24px;
+    align-items: center;
+    margin: 0 auto;
+    padding: 25px 50px;
+    overflow: hidden;
+}
+
+.form-row {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.input,
+.textarea {
+    flex: 1;
+    padding: 18px 20px;
+    border-radius: 14px;
+    border: none;
+    background: #fff;
+    font-size: 1.1rem;
+    color: #222;
+    margin-bottom: 0;
+    outline: none;
+    transition: box-shadow 0.2s;
+    z-index: 1;
+    width: 100%;
+    resize: none;
+}
+
+.input:focus,
+.textarea:focus {
+    box-shadow: 0 0 0 2px #FFD54A44;
+}
+
+.textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.button {
+    background: linear-gradient(to bottom, #F1B901, #CE9E00);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 100px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-left: auto;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    bottom: 10px;
+    right: 30px;
+}
+
+.button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.success {
+    color: #FFD54A;
+    font-weight: 600;
+    margin-top: 18px;
+    text-align: right;
+}
+
+.error {
+    color: #ff4a4a;
+    font-weight: 600;
+    margin-top: 18px;
+    text-align: right;
+}
+
+.pattern {
+    position: absolute;
+    top: -10px;
+    left: -65px;
+    height: 111%;
+    overflow: hidden;
+    z-index: 0;
+    rotate: -15deg;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .policies {
+        padding: 60px 80px;
+    }
+
+    .policies h2 {
+        font-size: 1.8rem;
+    }
+
+    .form {
+        width: 85%;
+        padding: 20px 40px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 1rem;
+        padding: 16px 18px;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 12px 80px;
+    }
+}
+
+@media (max-width: 992px) {
+    .policies {
+        padding: 50px 60px;
+    }
+
+    .policies h2 {
+        font-size: 1.6rem;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .form {
+        width: 90%;
+        padding: 20px 30px;
+    }
+
+    .form-row {
+        gap: 20px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 0.95rem;
+        padding: 15px 16px;
+    }
+
+    .button {
+        font-size: 0.95rem;
+        padding: 12px 70px;
+        bottom: 8px;
+        right: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .policies {
+        padding: 40px 30px;
+    }
+
+    .policies h2 {
+        font-size: 1.4rem;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .form {
+        width: 95%;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 0.9rem;
+        padding: 14px 15px;
+    }
+
+    .textarea {
+        min-height: 100px;
+    }
+
+    .button {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .policies {
+        padding: 30px 20px;
+    }
+
+    .policies h2 {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        margin-bottom: 12px;
+    }
+
+    .form {
+        width: 100%;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .form-row {
+        gap: 12px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
+
+    .textarea {
+        min-height: 80px;
+    }
+
+    .button {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .success,
+    .error {
+        font-size: 0.85rem;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .policies {
+        padding: 25px 15px;
+    }
+
+    .policies h2 {
+        font-size: 1.1rem;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .form {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .form-row {
+        gap: 10px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .textarea {
+        min-height: 70px;
+    }
+
+    .button {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .success,
+    .error {
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
+}

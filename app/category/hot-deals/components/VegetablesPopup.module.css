@@ -1,0 +1,296 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
+    backdrop-filter: blur(4px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.dialog {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 95vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 2px solid #4CAF50;
+}
+
+@keyframes slideIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+}
+
+.closeButton:hover {
+    background-color: #f5f5f5;
+    color: #333;
+    transform: scale(1.1);
+}
+
+.content {
+    padding: 40px 30px 30px 30px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.iconContainer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.icon {
+    font-size: 36px;
+    color: white;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2E7D32;
+    margin: 0;
+    font-family: var(--font-aclonica, sans-serif);
+    line-height: 1.2;
+}
+
+.message {
+    margin-bottom: 30px;
+}
+
+.mainText {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.secondaryText {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.newsletterSection {
+    background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 4px solid #4CAF50;
+}
+
+.newsletterHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.newsletterIcon {
+    font-size: 20px;
+    color: #4CAF50;
+}
+
+.newsletterTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2E7D32;
+    margin: 0;
+}
+
+.newsletterText {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+
+.callToAction {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #FFD54A 0%, #FFB300 100%);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 15px rgba(255, 213, 74, 0.3);
+}
+
+.ctaIcon {
+    font-size: 20px;
+    color: #E65100;
+}
+
+.ctaText {
+    font-size: 16px;
+    font-weight: 600;
+    color: #E65100;
+    margin: 0;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletterButton {
+    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    min-width: 160px;
+    justify-content: center;
+}
+
+.newsletterButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    background: linear-gradient(135deg, #388E3C 0%, #4CAF50 100%);
+}
+
+.closeButtonSecondary {
+    background: #f5f5f5;
+    color: #666;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 160px;
+}
+
+.closeButtonSecondary:hover {
+    background: #e8e8e8;
+    color: #333;
+    border-color: #ccc;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .dialog {
+        margin: 20px;
+        width: calc(100vw - 40px);
+        max-height: calc(100vh - 40px);
+    }
+
+    .content {
+        padding: 30px 20px 20px 20px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .mainText {
+        font-size: 16px;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletterButton,
+    .closeButtonSecondary {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dialog {
+        margin: 10px;
+        width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+    }
+
+    .content {
+        padding: 25px 15px 15px 15px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .iconContainer {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon {
+        font-size: 28px;
+    }
+
+    .newsletterSection {
+        padding: 20px;
+    }
+}

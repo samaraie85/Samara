@@ -1,0 +1,294 @@
+.policies {
+    width: 100%;
+    background-color: #252525;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 75px 100px;
+}
+
+.policies h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: var(--font-aclonica);
+}
+
+.policies h2 span {
+    color: #FFD54A;
+}
+
+.donate {
+    margin: 50px;
+
+}
+
+.policies p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.health {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    align-self: center;
+}
+
+.policies ul {
+    margin-left: 50px;
+    list-style-type: disc;
+    padding: 0;
+}
+
+.policies ul li {
+    color: #fff;
+}
+
+.email {
+    color: #FFD54A;
+    text-decoration: underline;
+}
+
+.reviewsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.reviewCard {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.reviewHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #1e293b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.reviewerName {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.stars {
+    color: #F1B901;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.reviewText {
+    color: #222;
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 24px 0 0 0;
+}
+
+.pagination button {
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.pagination .activePage,
+.pagination button:hover {
+    background: #FFD54A;
+    color: #222;
+}
+
+@media (max-width: 1200px) {
+    .policies {
+        padding: 60px 80px;
+    }
+
+    .policies h2 {
+        font-size: 1.8rem;
+    }
+
+    .policies p {
+        font-size: 1.1rem;
+    }
+
+    .policies ul {
+        margin-left: 40px;
+    }
+
+    .reviewsGrid {
+        gap: 28px;
+    }
+
+    .reviewCard {
+        padding: 22px 26px;
+    }
+}
+
+@media (max-width: 992px) {
+    .policies {
+        padding: 50px 60px;
+    }
+
+    .policies h2 {
+        font-size: 1.6rem;
+    }
+
+    .policies p {
+        font-size: 1rem;
+    }
+
+    .policies ul {
+        margin-left: 30px;
+    }
+
+    .donate {
+        margin: 40px;
+    }
+
+    .reviewsGrid {
+        gap: 24px;
+    }
+
+    .reviewCard {
+        padding: 20px 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .policies {
+        padding: 40px 40px;
+    }
+
+    .policies h2 {
+        font-size: 1.4rem;
+    }
+
+    .policies p {
+        font-size: 0.95rem;
+    }
+
+    .policies ul {
+        margin-left: 25px;
+    }
+
+    .donate {
+        margin: 30px;
+    }
+
+    .health {
+        gap: 15px;
+    }
+
+    .reviewsGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .reviewCard {
+        padding: 18px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .policies {
+        padding: 30px 20px;
+    }
+
+    .policies h2 {
+        font-size: 1.2rem;
+    }
+
+    .policies p {
+        font-size: 0.9rem;
+    }
+
+    .policies ul {
+        margin-left: 20px;
+    }
+
+    .donate {
+        margin: 20px;
+    }
+
+    .health {
+        gap: 10px;
+    }
+
+    .reviewsGrid {
+        gap: 16px;
+    }
+
+    .reviewCard {
+        padding: 16px 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .policies {
+        padding: 25px 15px;
+    }
+
+    .policies h2 {
+        font-size: 1.1rem;
+    }
+
+    .policies p {
+        font-size: 0.85rem;
+    }
+
+    .policies ul {
+        margin-left: 15px;
+    }
+
+    .donate {
+        margin: 15px;
+    }
+
+    .health {
+        gap: 8px;
+    }
+
+    .reviewsGrid {
+        gap: 14px;
+    }
+
+    .reviewCard {
+        padding: 14px 18px;
+    }
+}

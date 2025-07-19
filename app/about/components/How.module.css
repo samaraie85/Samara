@@ -1,0 +1,211 @@
+.how {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background: #2d2b2a;
+    padding: 0rem 10rem;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
+    min-height: 420px;
+    min-width: 100%;
+    margin: 0;
+}
+
+.textContent {
+    flex: 2;
+    color: #fff;
+    font-family: 'Aclonica', var(--font-aclonica), sans-serif;
+    margin-right: 2rem;
+}
+
+.title {
+    font-size: 2.2em;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-aclonica), sans-serif;
+}
+
+.description {
+    font-size: 1.1em;
+    line-height: 1.5;
+    font-family: 'Geist', var(--font-geist-sans), sans-serif;
+}
+
+.imageWrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modelImage {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 32px rgba(255, 255, 255, 0.533));
+}
+
+.how {
+    background-color: #1A1A1A;
+    width: 100%;
+    padding: 100px 100px;
+}
+
+.how h1 {
+    color: #FFD54A;
+    font-size: 2rem;
+    font-family: var(--font-aclonica);
+}
+
+.how h1 span {
+    color: #fff;
+}
+
+.howGrid {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.howItem {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.howItem h2 {
+    color: #AE7C06;
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.howItem p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .how {
+        padding: 80px 80px;
+    }
+
+    .how h1 {
+        font-size: 1.8rem;
+    }
+
+    .howGrid {
+        gap: 15px;
+    }
+
+    .howItem {
+        padding: 25px;
+    }
+
+    .howItem h2 {
+        font-size: 1.4rem;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .how {
+        padding: 60px 60px;
+    }
+
+    .how h1 {
+        font-size: 1.6rem;
+    }
+
+    .howGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .howItem {
+        padding: 20px;
+    }
+
+    .howItem h2 {
+        font-size: 1.3rem;
+        margin: 12px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .how {
+        padding: 40px 30px;
+    }
+
+    .how h1 {
+        font-size: 1.4rem;
+    }
+
+    .howGrid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .howItem {
+        padding: 20px;
+    }
+
+    .howItem h2 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    .howItem p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .how {
+        padding: 30px 20px;
+    }
+
+    .how h1 {
+        font-size: 1.2rem;
+    }
+
+    .howItem {
+        padding: 15px;
+    }
+
+    .howItem h2 {
+        font-size: 1.1rem;
+        margin: 8px 0;
+    }
+
+    .howItem p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .how {
+        padding: 25px 15px;
+    }
+
+    .how h1 {
+        font-size: 1.1rem;
+    }
+
+    .howItem {
+        padding: 12px;
+    }
+
+    .howItem h2 {
+        font-size: 1rem;
+        margin: 6px 0;
+    }
+
+    .howItem p {
+        font-size: 0.8rem;
+    }
+}

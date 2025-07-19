@@ -1,0 +1,87 @@
+.similarProducts h1 {
+    font-family: var(--font-aclonica);
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.similarProducts h1 span {
+    color: #FFD54A;
+}
+
+.similarProductsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.viewAll span {
+    color: #FFD54A;
+    font-size: 0.8rem;
+}
+
+.viewAll {
+    display: flex;
+    align-items: end;
+    gap: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .similarProducts h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
+
+    .similarProductsContainer {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .similarProducts h1 {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+
+    }
+
+    .similarProductsContainer {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .similarProducts h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+
+    }
+
+    .similarProductsContainer {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .similarProducts h1 {
+        font-size: 1.1rem;
+        margin-bottom: 0;
+
+    }
+
+    .similarProductsContainer {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .similarProducts h1 {
+        font-size: 1rem;
+        margin-bottom: 0;
+
+    }
+
+    .similarProductsContainer {
+        margin-bottom: 20px;
+    }
+}

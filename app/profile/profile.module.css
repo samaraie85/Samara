@@ -1,0 +1,252 @@
+.profilePage {
+    min-height: 100vh;
+    background-color: #252525;
+}
+
+.profileHeader {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/profile-pattren.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    padding: 25px 200px;
+}
+
+.profileHeader h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: var(--font-aclonica);
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.active {
+    color: #FFD54A;
+}
+
+.breadcrumbs a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: #F1B901;
+}
+
+
+.profileContainer0 {
+    padding: 75px 20px;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.profileContent {
+    display: flex;
+    margin: 0;
+    padding: 50px 0 20px 0;
+    gap: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.contentTitle {
+    font-family: var(--font-aclonica);
+    color: #FFD54A;
+}
+
+.contentSubTitle {
+    color: white;
+}
+
+.mainContentContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contentArea {
+    flex: 1;
+    border-radius: 10px;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    min-width: 300px;
+    min-height: 240px;
+}
+
+.contentDescription {
+    width: 100%;
+    margin-top: 5px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.contentDescription p {
+    margin: 0;
+}
+
+.contentDescriptionButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #F1B901, #CE9E00);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    width: fit-content;
+}
+
+
+
+.contentDescriptionButton p {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    font-size: 18px;
+    color: #888;
+    width: 100%;
+}
+
+/* Wishlist styles */
+.wishlistGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.wishlistCard {
+    background: #232323;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 18px 12px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+
+.wishlistCard:hover {
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.15);
+}
+
+.wishlistLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.wishlistImage {
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 18px;
+    background: #fff;
+}
+
+.wishlistInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.wishlistName {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFD700;
+}
+
+.wishlistPrice {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.emptyState {
+    text-align: center;
+    color: #aaa;
+    margin: 40px 0;
+    font-size: 1.2rem;
+}
+
+.wishlistSearchRow {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 18px;
+}
+
+.wishlistSearchInput {
+    width: 260px;
+    padding: 8px 14px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition: border 0.2s;
+}
+
+.wishlistSearchInput:focus {
+    border: 2px solid #FFD700;
+    background: #232323;
+    color: #fff;
+    transition: border 0.2s;
+    
+}
+
+@media (max-width: 768px) {
+    .profileContent {
+        flex-direction: column;
+    }
+
+    .profileHeader {
+        padding: 25px 20px;
+        min-height: 30vh;
+    }
+
+    .profileHeader h1 {
+        font-size: 32px;
+    }
+
+    .profileContainer0 {
+        padding: 40px 15px;
+    }
+}

@@ -1,0 +1,304 @@
+.profileInfo {
+    width: 100%;
+    padding: 0;
+    color: #fff;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    font-size: 18px;
+    color: #888;
+    width: 100%;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.addressList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.addressContent {
+    display: flex;
+    align-items: center;
+}
+
+.addressCard {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.addressCard:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mapThumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.mapThumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.addressInfo {
+    flex: 1;
+}
+
+.addressHeader {
+    margin-left: 20px;
+}
+
+.addressTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #CD9C00;
+    margin: 0;
+}
+
+.cityName {
+    font-weight: normal;
+}
+
+.addressDetails {
+    color: #999;
+    line-height: 1.4;
+    margin: 0;
+    font-size: 14px;
+}
+
+.addressActions {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.deleteAction {
+    color: #C35858;
+    background-color: #C358581A;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 1px solid #C35858;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option {
+    background-color: #262626;
+}
+
+.editAction {
+    background: linear-gradient(to bottom, #F1B901, #CD9C00);
+    color: #fff;
+    padding: 8px 35px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+
+.addAddressButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: transparent;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.addAddressButton:hover {
+    border-color: #F1B901;
+    color: #F1B901;
+}
+
+.formSection {
+    background-color: #242424;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.formTitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.addressForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formField.fullWidth {
+    grid-column: span 2;
+}
+
+.formLabel {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.requiredMark {
+    color: #F1B901;
+    margin-left: 3px;
+}
+
+.formInput {
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.formInput:focus {
+    border-color: #F1B901;
+    outline: none;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    grid-column: span 2;
+}
+
+.submitButton {
+    background-color: #F1B901;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #CD9C00;
+}
+
+.cancelButton {
+    background-color: transparent;
+    color: #ccc;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cancelButton:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+}
+
+.noAddresses {
+    text-align: center;
+    padding: 60px 0;
+    color: #999;
+}
+
+.loadingSpinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border-top-color: #F1B901;
+    animation: spin 0.8s linear infinite;
+    margin-right: 10px;
+}
+
+.addressName {
+    font-size: 18px;
+    color: #C15100;
+    margin: 0;
+}
+
+.addressName span {
+
+    color: #000;
+}
+
+.addressLine {
+    font-size: 14px;
+    color: grey;
+    margin: 0;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cityWarning {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    padding: 10px;
+    background-color: rgba(255, 200, 0, 0.1);
+    border: 1px solid #F1B901;
+    border-radius: 8px;
+    color: #F1B901;
+    font-size: 14px;
+}
+
+.warningIcon {
+    margin-right: 8px;
+    font-size: 16px;
+}

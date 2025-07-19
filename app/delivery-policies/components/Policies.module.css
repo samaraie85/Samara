@@ -1,0 +1,147 @@
+.policies {
+    width: 100%;
+    background-color: #252525;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 75px 100px;
+}
+
+.policies h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: var(--font-aclonica);
+}
+
+.policies h2 span {
+    color: #FFD54A;
+}
+
+.donate {
+    margin: 50px;
+
+}
+
+.policies p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.health {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    align-self: center;
+}
+
+.policies ul {
+    margin-left: 50px;
+    list-style-type: disc;
+    padding: 0;
+}
+
+.policies ul li {
+    color: #fff;
+}
+
+.email {
+    color: #FFD54A;
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .policies {
+        padding: 60px 80px;
+    }
+
+    .policies h2 {
+        font-size: 1.8rem;
+    }
+
+    .policies p {
+        font-size: 1.1rem;
+    }
+
+    .policies ul {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .policies {
+        padding: 50px 60px;
+    }
+
+    .policies h2 {
+        font-size: 1.6rem;
+    }
+
+    .policies p {
+        font-size: 1rem;
+    }
+
+    .policies ul {
+        margin-left: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .policies {
+        padding: 40px 30px;
+    }
+
+    .policies h2 {
+        font-size: 1.4rem;
+    }
+
+    .policies p {
+        font-size: 0.95rem;
+        margin-top: 15px;
+    }
+
+    .policies ul {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .policies {
+        padding: 30px 20px;
+    }
+
+    .policies h2 {
+        font-size: 1.2rem;
+    }
+
+    .policies p {
+        font-size: 0.9rem;
+        margin-top: 12px;
+    }
+
+    .policies ul {
+        margin-left: 25px;
+    }
+}
+
+@media (max-width: 360px) {
+    .policies {
+        padding: 25px 15px;
+    }
+
+    .policies h2 {
+        font-size: 1.1rem;
+    }
+
+    .policies p {
+        font-size: 0.85rem;
+        margin-top: 10px;
+    }
+
+    .policies ul {
+        margin-left: 20px;
+    }
+}

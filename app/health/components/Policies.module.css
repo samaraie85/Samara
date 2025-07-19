@@ -1,0 +1,153 @@
+.policies {
+    width: 100%;
+    background-color: #252525;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 75px 100px;
+}
+
+.policies h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: var(--font-aclonica);
+}
+
+.policies h2 span {
+    color: #FFD54A;
+}
+
+.donate {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.policies p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.health {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    align-self: center;
+    margin: 30px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .policies {
+        padding: 60px 80px;
+    }
+
+    .policies h2 {
+        font-size: 1.8rem;
+    }
+
+    .policies p {
+        font-size: 1.1rem;
+    }
+
+    .donate {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    .policies {
+        padding: 50px 60px;
+    }
+
+    .policies h2 {
+        font-size: 1.6rem;
+    }
+
+    .policies p {
+        font-size: 1rem;
+    }
+
+    .donate {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .policies {
+        padding: 40px 30px;
+    }
+
+    .policies h2 {
+        font-size: 1.4rem;
+    }
+
+    .policies p {
+        font-size: 0.95rem;
+    }
+
+    .health {
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .donate {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .policies {
+        padding: 30px 20px;
+    }
+
+    .policies h2 {
+        font-size: 1.2rem;
+    }
+
+    .policies p {
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
+
+    .health {
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    .donate {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 360px) {
+    .policies {
+        padding: 25px 15px;
+    }
+
+    .policies h2 {
+        font-size: 1.1rem;
+    }
+
+    .policies p {
+        font-size: 0.85rem;
+        margin-top: 12px;
+    }
+
+    .health {
+        gap: 8px;
+        margin: 15px 0;
+    }
+
+    .donate {
+        width: 100px;
+        height: 100px;
+    }
+}

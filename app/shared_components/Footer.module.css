@@ -1,0 +1,373 @@
+.footer {
+    background: linear-gradient(to right bottom, #000000, #000000, #000000, #ffd54a);
+    color: #fff;
+    padding: 3rem 0 0 0;
+    position: relative;
+    font-family: 'Geist', var(--font-geist-sans), sans-serif;
+    overflow: hidden;
+}
+
+.topSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3vw 2rem 3vw;
+    position: relative;
+}
+
+.left {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 320px;
+    z-index: 1;
+}
+
+.description {
+    margin: 1.5rem 0 1.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    max-width: 500px;
+}
+
+.downloadLabel {
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    font-size: 0.9rem;
+}
+
+.storeButtons {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 220px;
+    margin-left: 150px;
+    z-index: 1;
+}
+
+.linksTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.2s;
+    z-index: 10;
+}
+
+.linksTitle:hover {
+    color: #FFD54A;
+}
+
+.collapseIcon {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    color: #FFD54A;
+}
+
+.linksList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.linksList li {
+    margin-bottom: 0.7rem;
+    font-size: 0.95rem;
+}
+
+.linksList a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.linksList a:hover {
+    color: #FFD54A;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 220px;
+    position: relative;
+}
+
+.lantern {
+    filter: drop-shadow(0 0 16px #FFD54A88);
+    position: absolute;
+    right: 0;
+    top: 0;
+    aspect-ratio: 1/1;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 2.2rem;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+.socialIcons a {
+    color: #fff;
+    transition: color 0.2s;
+}
+
+.socialIcons a:hover {
+    color: #FFD54A;
+}
+
+.bottomSection {
+    width: 100%;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    margin-top: 2rem;
+}
+
+.footerLinksGrid {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    margin-top: 1rem;
+}
+
+.footerLinksSection {
+    flex: 1 1 0;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footerDivider {
+    width: 2px;
+    background: #FFD54A44;
+    height: 70px;
+    align-self: center;
+    border-radius: 2px;
+    margin: 0 8px;
+}
+
+.newsletterButton {
+    background: linear-gradient(90deg, #FFD54A 0%, #DFAB00 100%);
+    color: #232323;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1.05rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #FFD54A22;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    outline: none;
+}
+
+.newsletterButton:hover {
+    background: linear-gradient(90deg, #DFAB00 0%, #FFD54A 100%);
+    color: #000;
+    transform: scale(1.04);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .topSection {
+        padding: 0 2vw 2rem 2vw;
+    }
+
+    .center {
+        margin-left: 100px;
+    }
+
+    .lantern {
+        width: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .topSection {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .left {
+        align-items: center;
+        min-width: auto;
+    }
+
+    .description {
+        text-align: center;
+        max-width: 600px;
+    }
+
+    .center {
+        margin-left: 0;
+        align-items: center;
+        min-width: auto;
+    }
+
+    .linksList {
+        text-align: center;
+    }
+
+    .right {
+        align-items: center;
+        min-width: auto;
+    }
+
+    .lantern {
+        width: 150px;
+        right: 50%;
+        transform: translateX(50%);
+        top: -50px;
+    }
+
+    .footerLinksGrid {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .footerLinksSection {
+        align-items: center;
+        min-width: 0;
+        margin-bottom: 1rem;
+    }
+
+    .footerDivider {
+        width: 80%;
+        height: 2px;
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0 0 0;
+    }
+
+    .topSection {
+        padding: 0 1.5rem 2rem 1.5rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .linksTitle {
+        font-size: 1.5rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #FFD54A33;
+        width: 100%;
+    }
+
+    .linksList li {
+        font-size: 1rem;
+    }
+
+    .socialIcons {
+        gap: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .lantern {
+        width: 120px;
+        top: -30px;
+    }
+
+    .footerLinksGrid {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .footerLinksSection {
+        width: 100%;
+        border-bottom: 1px solid #FFD54A22;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .footerDivider {
+        display: none;
+    }
+
+    .collapseIcon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.5rem 0 0 0;
+    }
+
+    .topSection {
+        padding: 0 1rem 1.5rem 1rem;
+    }
+
+    .description {
+        font-size: 0.85rem;
+        margin: 1rem 0;
+    }
+
+    .linksTitle {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        padding: 0.3rem 0;
+    }
+
+    .linksList li {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .socialIcons {
+        gap: 1.2rem;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+
+    .lantern {
+        width: 100px;
+        top: -20px;
+    }
+
+    .bottomSection {
+        font-size: 0.8rem;
+        padding: 0.8rem 0;
+    }
+
+    .collapseIcon {
+        font-size: 0.9rem;
+    }
+}

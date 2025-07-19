@@ -1,0 +1,551 @@
+.profileInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    font-size: 18px;
+    color: #888;
+    width: 100%;
+}
+
+.profileCard {
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding-left: 30px;
+}
+
+.profileInfo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -5px;
+    bottom: 0;
+    width: 200px;
+    background-image: url('../../assets/profile-side-pattren.png');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.profileImageSection {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileImageContainer {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profileImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.defaultAvatar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #F1B901, #CE9E00);
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.changeButton {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.changeButton:hover {
+    background-color: rgba(241, 185, 1, 0.8);
+}
+
+.profileDetails {
+    flex: 1;
+    padding: 30px;
+}
+
+.userName {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #CA7D00;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.infoIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+    color: #F1B901;
+}
+
+.infoItem p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .profileCard {
+        flex-direction: column;
+    }
+
+    .profileImageSection {
+        padding: 30px;
+    }
+}
+
+.ordersContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+}
+
+.orderCard {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.orderHeader {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+}
+
+.orderNumber {
+    margin-right: 4px;
+}
+
+.numberCircle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #F1B901;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.orderTitle {
+    flex: 1;
+}
+
+.orderTitle h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.orderItem {
+    font-weight: 500;
+}
+
+.itemQuantity {
+    color: #F1B901;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.orderTimestamp {
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.orderDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.addressInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.addressInfo p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666;
+}
+
+.orderFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderPrice {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.orderStatusContainer {
+    background-color: #CF7901;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pageButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.pageButton:hover {
+    background-color: #f5f5f5;
+}
+
+.activePage {
+    background-color: #F1B901;
+    color: #fff;
+}
+
+.activePage:hover {
+    background-color: #E1A900;
+}
+
+.pageArrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #F1B901;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.pageArrow:hover {
+    background-color: #E1A900;
+}
+
+.pageArrow:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .orderHeader {
+        flex-direction: column;
+    }
+
+    .orderTimestamp {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .orderFooter {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .orderStatusContainer {
+        align-self: flex-end;
+    }
+}
+
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.loading {
+    font-size: 1.2rem;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-left-color: #FFD700;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f8d7da;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.error {
+    font-size: 1.1rem;
+    color: #721c24;
+    margin-bottom: 1rem;
+}
+
+.retryButton {
+    padding: 0.5rem 1.5rem;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 4px;
+    color: #212529;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.retryButton:hover {
+    background-color: #e6c200;
+}
+
+.noOrders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #6c757d;
+    gap: 1.5rem;
+}
+
+.createTestOrdersButton {
+    padding: 0.75rem 1.5rem;
+    background-color: #F1B901;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+}
+
+.createTestOrdersButton:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+}
+
+.createTestOrdersButton:active {
+    transform: translateY(0);
+}
+
+.authStatusContainer {
+    width: 100%;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+}
+
+.authStatusContainer h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #495057;
+    font-size: 1.2rem;
+}
+
+.authStatusContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.authStatusContent p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.authStatusContent strong {
+    color: #495057;
+}
+
+.idMatchStatus {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+.idMatch {
+    color: #28a745 !important;
+    font-weight: 600;
+}
+
+.idMismatch {
+    color: #dc3545 !important;
+    font-weight: 600;
+}
+
+.authComparisonSection {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.authSection {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.authSection h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #343a40;
+}
+
+.authStatusBox {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.authSuccess {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.authWarning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.authError {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.userDetails {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #e9ecef;
+    border-radius: 6px;
+}
+
+.userDetails h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #343a40;
+}
+
+.fixButton {
+    padding: 0.5rem 1.5rem;
+    background-color: #17a2b8;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 1rem;
+}
+
+.fixButton:hover {
+    background-color: #138496;
+}

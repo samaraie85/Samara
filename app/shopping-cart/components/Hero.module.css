@@ -1,0 +1,133 @@
+.hero {
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../../assets/cart-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 55vh;
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+}
+
+.heroContent {
+    margin-left: 100px;
+    margin-bottom: 70px;
+}
+
+.title {
+    color: #fff;
+    font-size: 3rem;
+    font-family: var(--font-aclonica);
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.active {
+    color: #FFD54A;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .heroContent {
+        margin-left: 80px;
+        margin-bottom: 60px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        height: 45vh;
+    }
+
+    .heroContent {
+        margin-left: 60px;
+        margin-bottom: 50px;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 40vh;
+    }
+
+    .heroContent {
+        margin-left: 40px;
+        margin-bottom: 40px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .breadcrumbs {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 35vh;
+    }
+
+    .heroContent {
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .breadcrumbs {
+        font-size: 12px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        height: 30vh;
+    }
+
+    .heroContent {
+        margin-left: 15px;
+        margin-bottom: 25px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .breadcrumbs {
+        font-size: 11px;
+        gap: 6px;
+    }
+}

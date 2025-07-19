@@ -1,0 +1,432 @@
+.hero {
+    /* background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
+        url('../assets/home-pattren.png'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textContent {
+    flex: 1;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    animation: fadeInLeft 1s ease-out forwards;
+    padding: 0 2rem;
+    z-index: 2;
+}
+
+.title {
+    font-size: 60px;
+    font-family: var(--font-aclonica);
+    margin-bottom: 0px;
+    color: #fff;
+    opacity: 0;
+    animation: fadeInLeft 1s ease-out 0.2s forwards;
+    transition: all 0.5s ease;
+    /* text-align: center; */
+}
+
+.title.discount,
+.title.donation,
+.title.delivery,
+.title.points {
+    font-size: 60px;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 550px;
+    opacity: 0;
+    animation: fadeInLeft 1s ease-out 0.4s forwards;
+    transition: all 0.5s ease;
+    /* text-align: center; */
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInLeft 1s ease-out 0.6s forwards;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+
+.viewProducts,
+.learnMore {
+    padding: 12px 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.viewProducts {
+    background: linear-gradient(to right, #F1B901, #CE9E00);
+    color: black;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    min-width: 190px;
+    padding: 12px 25px;
+}
+
+.viewProducts svg {
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+.learnMore {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.imageWrapper {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    animation: fadeInRight 1s ease-out forwards;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+}
+
+.modelImage {
+    opacity: 0;
+    animation: fadeInRight 1s ease-out 0.4s forwards;
+    max-width: 100%;
+    height: auto;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sliderButtons {
+    position: absolute;
+    bottom: 40px;
+    left: 110px;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+.sliderButton {
+    background-color: #FED448;
+    color: #fff;
+    border: none;
+    padding: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+.sliderButton:hover {
+    background-color: #F1B901;
+    transform: scale(1.1);
+}
+
+.slideIndicators {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    z-index: 10;
+    /* justify-content: center; */
+}
+
+.indicator {
+    width: 25px;
+    height: 2px;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    width: 50px;
+    background-color: #FED448;
+    border-color: #FED448;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+
+    .title,
+    .title.discount,
+    .title.donation,
+    .title.delivery,
+    .title.points {
+        font-size: 50px;
+    }
+
+    .description {
+        font-size: 14px;
+        max-width: 500px;
+    }
+
+    .imageWrapper {
+        width: 45%;
+    }
+
+    .supTextContent {
+        width: auto !important;
+    }
+
+    .slideIndicators,
+    .buttons,
+    .description,
+    .title {
+        text-align: center;
+        justify-content: center;    
+    }
+
+
+}
+
+@media (max-width: 992px) {
+
+    .title,
+    .title.discount,
+    .title.donation,
+    .title.delivery,
+    .title.points {
+        font-size: 40px;
+    }
+
+    .description {
+        font-size: 13px;
+        max-width: 450px;
+    }
+
+    .imageWrapper {
+        width: 40%;
+    }
+
+    .sliderButtons {
+        left: 50px;
+        bottom: 30px;
+    }
+
+    .supTextContent {
+        width: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .textContent {
+        padding: 0 1rem;
+        height: auto;
+        margin-top: 80px;
+    }
+
+    .title,
+    .title.discount,
+    .title.donation,
+    .title.delivery,
+    .title.points {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 12px;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .viewProducts,
+    .learnMore {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+
+    .imageWrapper {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        justify-content: center;
+    }
+
+    .modelImage {
+        max-height: 100%;
+        width: auto;
+    }
+
+    .sliderButtons {
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .sliderButton {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .supTextContent {
+        width: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .textContent {
+        margin-top: 60px;
+    }
+
+    .title,
+    .title.discount,
+    .title.donation,
+    .title.delivery,
+    .title.points {
+        font-size: 28px;
+    }
+
+    .description {
+        font-size: 11px;
+        margin-bottom: 15px;
+    }
+
+    .buttons {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .viewProducts,
+    .learnMore {
+        padding: 8px 20px;
+        font-size: 12px;
+        min-width: 150px;
+    }
+
+    .imageWrapper {
+        height: 250px;
+    }
+
+    .sliderButtons {
+        left: 10px;
+        bottom: 15px;
+    }
+
+    .sliderButton {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .indicator {
+        width: 20px;
+    }
+
+    .indicator.active {
+        width: 40px;
+    }
+
+    .supTextContent {
+        width: auto !important;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .title,
+    .title.discount,
+    .title.donation,
+    .title.delivery,
+    .title.points {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 10px;
+    }
+
+    .viewProducts,
+    .learnMore {
+        padding: 6px 15px;
+        font-size: 11px;
+        min-width: 130px;
+    }
+
+    .imageWrapper {
+        height: 200px;
+    }
+
+    .supTextContent {
+        width: auto !important;
+    }
+}

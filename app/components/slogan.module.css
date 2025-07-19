@@ -1,0 +1,144 @@
+.sologan {
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.sloganImage {
+    height: 100%;
+    width: 100px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    margin-right: 50px;
+    height: 90% !important;
+    aspect-ratio: 1/1 !important;
+    transition: all 0.3s ease;
+}
+
+.sologan h1 {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    font-family: var(--font-aclonica);
+    text-align: center;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.sologan h1 span {
+    color: #FFD700;
+    font-size: 40px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+
+    .sloganImage {
+        width: 80px;
+    }
+
+    .logo {
+        margin-right: 30px;
+    }
+
+    .sologan h1 {
+        font-size: 22px;
+    }
+
+    .sologan h1 span {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 992px) {
+
+
+    .sloganImage {
+        width: 70px;
+    }
+
+    .logo {
+        margin-right: 20px;
+    }
+
+    .sologan h1 {
+        font-size: 20px;
+    }
+
+    .sologan h1 span {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sloganImage {
+        width: 60px;
+    }
+
+    .logo {
+        margin-right: 0;
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .sologan h1 {
+        font-size: 18px;
+    }
+
+    .sologan h1 span {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .sloganImage {
+        width: 40px;
+    }
+
+    .logo {
+        width: 40px !important;
+        height: 40px !important;
+        margin-right: 10px;
+    }
+
+
+    .sologan h1 {
+        font-size: 14px;
+    }
+
+    .sologan h1 span {
+        font-size: 20px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+
+
+    .sloganImage {
+        width: 30px;
+    }
+
+    .logo {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .sologan h1 {
+        font-size: 14px;
+    }
+
+    .sologan h1 span {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,335 @@
+.reviews {
+    background-color: #252525;
+    padding: 75px 100px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pattern1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 175px;
+    height: 175px;
+}
+
+.pattern2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    rotate: 180deg;
+    width: 175px;
+    height: 175px;
+}
+
+.hotdealsContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hotdealsContent h1 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: var(--font-aclonica);
+    color: white;
+    margin-bottom: 40px;
+    padding-left: 20px;
+}
+
+.hotdealsContent h1 span {
+    color: #FFD700;
+}
+
+.viewAll {
+    color: #fff;
+}
+
+.arrowIcon {
+    color: #FFD700;
+}
+
+.addReview {
+    background: linear-gradient(to bottom, #F1B901, #CE9E00);
+    color: white;
+    padding: 10px 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.reviewsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.reviewCard {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    padding: 24px 28px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.reviewHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #1e293b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.reviewerName {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.reviewDate {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.stars {
+    color: #F1B901;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.reviewText {
+    color: #222;
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+@media (max-width: 1200px) {
+    .reviews {
+        padding: 60px 80px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 28px;
+    }
+
+    .pattern1,
+    .pattern2 {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .reviews {
+        padding: 50px 60px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 26px;
+    }
+
+    .pattern1,
+    .pattern2 {
+        width: 130px;
+        height: 130px;
+    }
+
+    .avatar {
+        width: 48px;
+        height: 48px;
+        font-size: 1.8rem;
+    }
+
+    .reviewerName {
+        font-size: 1rem;
+    }
+
+    .reviewDate {
+        font-size: 0.9rem;
+    }
+
+    .stars {
+        font-size: 1.1rem;
+    }
+
+    .reviewText {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .reviewsContainer {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .reviewCard {
+        padding: 18px 10px;
+    }
+
+    .pattern1,
+    .pattern2 {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews {
+        padding: 40px 30px;
+    }
+
+    .hotdealsContent {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        padding-left: 0;
+    }
+
+    .pattern1,
+    .pattern2 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .avatar {
+        width: 42px;
+        height: 42px;
+        font-size: 1.6rem;
+    }
+
+    .reviewerName {
+        font-size: 0.95rem;
+    }
+
+    .reviewDate {
+        font-size: 0.85rem;
+    }
+
+    .stars {
+        font-size: 1rem;
+    }
+
+    .reviewText {
+        font-size: 0.9rem;
+    }
+
+    .addReview {
+        padding: 8px 40px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews {
+        padding: 30px 20px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 22px;
+    }
+
+    .pattern1,
+    .pattern2 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .avatar {
+        width: 38px;
+        height: 38px;
+        font-size: 1.4rem;
+    }
+
+    .reviewerName {
+        font-size: 0.9rem;
+    }
+
+    .reviewDate {
+        font-size: 0.8rem;
+    }
+
+    .stars {
+        font-size: 0.95rem;
+    }
+
+    .reviewText {
+        font-size: 0.85rem;
+    }
+
+    .addReview {
+        padding: 8px 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .reviews {
+        padding: 25px 15px;
+    }
+
+    .hotdealsContent h1 {
+        font-size: 20px;
+    }
+
+    .pattern1,
+    .pattern2 {
+        width: 70px;
+        height: 70px;
+    }
+
+    .avatar {
+        width: 34px;
+        height: 34px;
+        font-size: 1.2rem;
+    }
+
+    .reviewerName {
+        font-size: 0.85rem;
+    }
+
+    .reviewDate {
+        font-size: 0.75rem;
+    }
+
+    .stars {
+        font-size: 0.9rem;
+    }
+
+    .reviewText {
+        font-size: 0.8rem;
+    }
+
+    .addReview {
+        padding: 6px 25px;
+        font-size: 13px;
+    }
+}

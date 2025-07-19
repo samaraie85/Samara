@@ -1,0 +1,96 @@
+.mobileAppSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('../assets/mobile-bg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 480px;
+    width: 100%;
+    padding: 3rem 10rem;
+    position: relative;
+    color: #fff;
+    margin: 0;
+    overflow: hidden;
+}
+
+.leftContent {
+    flex: 1.2;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.samara {
+    font-size: 3rem;
+    font-family: var(--font-aclonica), sans-serif;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+    color: #fff;
+}
+
+.mobileApp {
+    font-size: 2.2rem;
+    font-family: var(--font-aclonica), sans-serif;
+    color: #FFD54A;
+    margin-bottom: 1.5rem;
+}
+
+.mobileApp span {
+    color: #FFF;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    color: #fff;
+    font-family: 'Geist', var(--font-geist-sans), sans-serif;
+}
+
+.storeButtons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.rightContent {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 2;
+}
+
+.phoneWrapper {
+    position: relative;
+    width: 400px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phoneWrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 0 15px 250px rgba(255, 255, 255, 1);
+
+}
+
+.phoneImage {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+
+}
