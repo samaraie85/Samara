@@ -214,6 +214,14 @@
     }
 
 
+    .logoInfoWrapper:hover .partnerInfo,
+    .logoInfoWrapper:focus-within .partnerInfo {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(0, 0);
+    }
+
+
 }
 
 @media (max-width: 768px) {
@@ -294,6 +302,12 @@
     }
 
 
+    .logoInfoWrapper:hover .partnerInfo,
+    .logoInfoWrapper:focus-within .partnerInfo {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(0, 0);
+    }
 
 }
 
@@ -376,6 +390,12 @@
     }
 
 
+    .logoInfoWrapper:hover .partnerInfo,
+    .logoInfoWrapper:focus-within .partnerInfo {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(0, 0);
+    }
 
 
 }
