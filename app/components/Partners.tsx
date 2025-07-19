@@ -9,8 +9,8 @@ import { useEffect } from 'react';
 
 
 const partners = [
-    { name: 'Tariq Halal', logo: partner1, description: 'Tariq Halal is a renowned supplier of halal products in the UAE, specializing in organic and sustainably sourced ingredients. Their extensive portfolio includes fresh produce, dairy products, and artisanal foods, all meeting the highest standards of halal certification and quality control.' },
-    { name: 'Green Valley', logo: partner2, description: 'Green Valley is a renowned supplier of halal products in the UAE, specializing in organic and sustainably sourced ingredients. Their extensive portfolio includes fresh produce, dairy products, and artisanal foods, all meeting the highest standards of halal certification and quality control.' },
+    { name: 'Tariq Halal', logo: partner1, description: 'Tariq Halal is a renowned supplier of halal products in the UAE, specializing in organic and sustainably sourced ingredients. Their extensive portfolio includes fresh produce, dairy products, and artisanal foods.' },
+    { name: 'Green Valley', logo: partner2, description: 'Green Valley is a renowned supplier of halal products in the UAE, specializing in organic and sustainably sourced ingredients. Their extensive portfolio includes fresh produce, dairy products, and artisanal foods.' },
 ];
 
 const Partners = () => {
