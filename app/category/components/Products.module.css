@@ -1,7 +1,10 @@
+
 .productsSection {
     padding: 50px 0;
     background-color: #252525;
     color: #fff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .productsHeader {

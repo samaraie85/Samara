@@ -6,6 +6,8 @@
     width: 100%;
     margin: 0;
     padding: 75px 150px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .loading {
@@ -27,7 +29,7 @@
 
 @media (max-width: 768px) {
     .mainContent {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 }
 

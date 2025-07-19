@@ -43,7 +43,7 @@ const HumanityFirst = () => {
                     <h4>Masjid Copy</h4>
                     <button
                         className={styles.downloadBtn}
-                        onClick={() => downloadPdf("/docs/Samara-Masjid.pdf", "Samara-Masjid")}
+                        onClick={() => downloadPdf("/docs/masjid/Samara-Masjid.pdf", "Samara-Masjid")}
                     >
                         Download
                     </button>
@@ -53,7 +53,7 @@ const HumanityFirst = () => {
                     <h4>Church Copy</h4>
                     <button
                         className={styles.downloadBtn}
-                        onClick={() => downloadPdf("/docs/Samara-Church.pdf", "Samara-Church")}
+                        onClick={() => downloadPdf("/docs/church/Samara-Church.pdf", "Samara-Church")}
                     >
                         Download
                     </button>
