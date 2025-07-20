@@ -312,21 +312,21 @@ const Checkout = () => {
             }
 
             // Debug logging
-            console.log('Payment Debug Info:', {
-                orderSummary: orderSummary,
-                discountAmount: discountAmount,
-                charityDiscountAmount: charityDiscountAmount,
-                donationAmount: donationAmount,
-                finalTotal: finalTotal,
-                formattedAmount: formattedAmount,
-                amountString: formattedAmount.toString(),
-                amountValidation: {
-                    isNumber: typeof formattedAmount === 'number',
-                    isFinite: isFinite(formattedAmount),
-                    isPositive: formattedAmount > 0,
-                    hasValidRange: formattedAmount >= 0.01 && formattedAmount <= 999999.99
-                }
-            });
+            // console.log('Payment Debug Info:', {
+            //     orderSummary: orderSummary,
+            //     discountAmount: discountAmount,
+            //     charityDiscountAmount: charityDiscountAmount,
+            //     donationAmount: donationAmount,
+            //     finalTotal: finalTotal,
+            //     formattedAmount: formattedAmount,
+            //     amountString: formattedAmount.toString(),
+            //     amountValidation: {
+            //         isNumber: typeof formattedAmount === 'number',
+            //         isFinite: isFinite(formattedAmount),
+            //         isPositive: formattedAmount > 0,
+            //         hasValidRange: formattedAmount >= 0.01 && formattedAmount <= 999999.99
+            //     }
+            // });
 
             // Generate unique reference for this transaction
             const uniqueReference = generateUniqueReference();

@@ -53,6 +53,13 @@ const Footer = () => {
                         <p className={styles.description}>
                             Samara is an Arabic brand,specializing in selling high quality Arabic products that are distinguished by their arabic authenticity.Samara Established in 2024 and its goal is to feel good and return to using our authentic arabic products.
                         </p>
+
+                        <p className={styles.newsletterText}>
+                            <strong>Stay tuned!</strong>👀<br />
+                            Add your email to our newsletter and be the first to know when our meat collection goes live — plus get exclusive updates and offers straight to your inbox!
+                        </p>
+
+
                         <button
                             className={styles.newsletterButton}
                             onClick={() => setShowNewsletter(true)}

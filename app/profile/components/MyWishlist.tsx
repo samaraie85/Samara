@@ -32,6 +32,7 @@ const MyWishlist: React.FC<MyWishlistProps> = ({ user }) => {
     const [wishlist, setWishlist] = useState<WishlistProduct[]>([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
+    const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'highest' | 'lowest'>('newest');
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -62,21 +63,45 @@ const MyWishlist: React.FC<MyWishlistProps> = ({ user }) => {
 
     // Filtered and mapped products for ProductCard
     const filteredProducts = useMemo(() => {
-        return wishlist
-            .filter(item =>
-                item.products?.name?.toLowerCase().includes(search.toLowerCase())
-            )
-            .map(item => ({
-                id: item.products.id,
-                name: item.products.name,
-                image: item.products.image,
-                price: item.products.price,
-                discount_price: item.products.discount_price,
-                qty_per_unit: item.products.qty_per_unit,
-                unitName: item.products.unitName || '',
-                categoryName: item.products.categoryName || '',
-            }));
-    }, [wishlist, search]);
+        const filtered = wishlist.filter(item =>
+            item.products?.name?.toLowerCase().includes(search.toLowerCase())
+        );
+
+        // Apply sorting
+        const sorted = [...filtered].sort((a, b) => {
+            const priceA = a.products.discount_price && a.products.discount_price > 0
+                ? a.products.discount_price
+                : a.products.price;
+            const priceB = b.products.discount_price && b.products.discount_price > 0
+                ? b.products.discount_price
+                : b.products.price;
+
+            switch (sortOrder) {
+                case 'highest':
+                    return priceB - priceA;
+                case 'lowest':
+                    return priceA - priceB;
+                case 'oldest':
+                    // For oldest, we'll sort by product ID (assuming lower ID = older)
+                    return a.products.id - b.products.id;
+                case 'newest':
+                default:
+                    // For newest, we'll sort by product ID (assuming higher ID = newer)
+                    return b.products.id - a.products.id;
+            }
+        });
+
+        return sorted.map(item => ({
+            id: item.products.id,
+            name: item.products.name,
+            image: item.products.image,
+            price: item.products.price,
+            discount_price: item.products.discount_price,
+            qty_per_unit: item.products.qty_per_unit,
+            unitName: item.products.unitName || '',
+            categoryName: item.products.categoryName || '',
+        }));
+    }, [wishlist, search, sortOrder]);
 
     // Pagination
     const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE) || 1;
@@ -85,10 +110,10 @@ const MyWishlist: React.FC<MyWishlistProps> = ({ user }) => {
         currentPage * PRODUCTS_PER_PAGE
     );
 
-    // Reset to first page on search
+    // Reset to first page on search or sort change
     useEffect(() => {
         setCurrentPage(1);
-    }, [search]);
+    }, [search, sortOrder]);
 
     if (loading) return <div className={styles.loading}><Image src={loadinga} alt="loading" width={100} height={100} /></div>;
 
@@ -102,6 +127,16 @@ const MyWishlist: React.FC<MyWishlistProps> = ({ user }) => {
                     value={search}
                     onChange={e => setSearch(e.target.value)}
                 />
+                <select
+                    className={styles.wishlistSortSelect}
+                    value={sortOrder}
+                    onChange={e => setSortOrder(e.target.value as 'newest' | 'oldest' | 'highest' | 'lowest')}
+                >
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="highest">Highest Price</option>
+                    <option value="lowest">Lowest Price</option>
+                </select>
             </div>
             {filteredProducts.length === 0 ? (
                 <div data-aos="fade-in" className={styles.emptyState}>No wishlist items found.</div>

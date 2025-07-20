@@ -26,11 +26,28 @@
     text-shadow: 0 2px 8px #000a;
 }
 
-.partnersGrid {
+.partnersContainer {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.partnersTrack {
     display: flex;
     gap: 32px;
-    justify-content: center;
     align-items: center;
+    animation: scroll 20s linear infinite;
+    width: max-content;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .partnerCard {
@@ -43,6 +60,7 @@
     width: 250px;
     align-items: center;
     justify-content: start;
+    flex-shrink: 0;
 }
 
 .logoInfoWrapper {
@@ -53,72 +71,18 @@
     justify-content: center;
 }
 
-.partnerInfo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 220px;
-    transform: translate(-50%, -50%) translateY(20px);
-    opacity: 0;
-    pointer-events: none;
-    background: rgba(24, 24, 24, 0.97);
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
-    padding: 18px 12px 12px 12px;
-    text-align: center;
-    transition: opacity 0.35s cubic-bezier(.4, 0, .2, 1), transform 0.35s cubic-bezier(.4, 0, .2, 1);
-    z-index: 2;
-}
 
-.logoInfoWrapper:hover .partnerInfo,
-.logoInfoWrapper:focus-within .partnerInfo {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) translateY(0);
-}
+
 
 .partnerLogo {
     height: 250px;
     width: 250px;
     object-fit: contain;
     border-radius: 10px;
-    /* If your logos are dark, use the filter below for white effect: */
-    /* filter: brightness(0) invert(1) grayscale(0.1) contrast(1.2); */
 }
 
-.partnersSubtitle {
-    font-size: 16px;
-    color: #888;
-    text-align: center;
-    margin-bottom: 80px;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
 
-.partnerName {
-    color: #FFD700;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
-}
 
-.partnerDescription {
-    color: #ccc;
-    font-size: 13px;
-    text-align: center;
-    line-height: 1.5;
-    font-weight: 400;
-    transition: color 0.3s ease;
-}
 
 .partnerBadge {
     position: absolute;
@@ -136,266 +100,16 @@
     transition: all 0.3s ease;
 }
 
-@media (max-width: 1024px) {
-    .partnersSection {
-        padding: 32px 0;
-    }
+@media (max-width: 1024px) {}
 
-    .partnersLabel {
-        font-size: 12px;
-    }
-
-    .partnersTitle {
-        font-size: 18px;
-        margin-bottom: 16px;
-    }
-
-    .partnersGrid {
-        gap: 16px;
-    }
-
-    .partnerCard {
-        min-width: 180px;
-        width: 45%;
-        height: auto;
-        padding: 10px 4px;
-    }
-
-    .partnerLogo {
-        width: 120px;
-        height: 120px;
-        padding: 4px;
-    }
-
-    .partnerName {
-        font-size: 12px;
-    }
-
-    .partnerDescription {
-        font-size: 10px;
-        text-align: left !important;
-
-    }
-
-    .partnersSubtitle {
-        font-size: 12px;
-        margin-bottom: 32px;
-        max-width: 90vw;
-    }
-
-
-    .logoInfoWrapper {
-        flex-direction: row;
-        gap: 10px;
-    }
-
-
-
-
-    .partnerInfo {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: auto;
-        height: 100%;
-        transform: translate(0, 0);
-        opacity: 1;
-        pointer-events: none;
-        background: transparent;
-        box-shadow: none;
-        border-radius: 10px;
-        padding: 2px;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-    }
-
-
-    .logoInfoWrapper:hover .partnerInfo,
-    .logoInfoWrapper:focus-within .partnerInfo {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translate(0, 0);
-    }
-
-
-}
-
-@media (max-width: 768px) {
-    .partnersSection {
-        padding: 32px 0;
-    }
-
-    .partnersLabel {
-        font-size: 12px;
-    }
-
-    .partnersTitle {
-        font-size: 18px;
-        margin-bottom: 16px;
-    }
-
-    .partnersGrid {
-        gap: 16px;
-    }
-
-    .partnerCard {
-        min-width: 180px;
-        width: 45%;
-        height: auto;
-        padding: 10px 4px;
-    }
-
-    .partnerLogo {
-        width: 120px;
-        height: 120px;
-        padding: 4px;
-    }
-
-    .partnerName {
-        font-size: 12px;
-    }
-
-    .partnerDescription {
-        font-size: 10px;
-        text-align: left !important;
-
-    }
-
-    .partnersSubtitle {
-        font-size: 12px;
-        margin-bottom: 32px;
-        max-width: 90vw;
-    }
-
-
-    .logoInfoWrapper {
-        flex-direction: row;
-        gap: 10px;
-    }
-
-
-
-
-    .partnerInfo {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: auto;
-        height: 100%;
-        transform: translate(0, 0);
-        opacity: 1;
-        pointer-events: none;
-        background: transparent;
-        box-shadow: none;
-        border-radius: 10px;
-        padding: 2px;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-    }
-
-
-    .logoInfoWrapper:hover .partnerInfo,
-    .logoInfoWrapper:focus-within .partnerInfo {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translate(0, 0);
-    }
-
-}
+@media (max-width: 768px) {}
 
 @media (max-width: 480px) {
-    .partnersSection {
-        padding: 32px 0;
-    }
 
-    .partnersLabel {
-        font-size: 12px;
-    }
-
-    .partnersTitle {
-        font-size: 18px;
-        margin-bottom: 16px;
-    }
-
-    .partnersGrid {
-        gap: 16px;
-        flex-direction: column;
-    }
-
-    .partnerCard {
-        min-width: 180px;
-        width: 90vw;
-        height: auto;
-        padding: 10px 4px;
-    }
-
+    .partnerCard,
     .partnerLogo {
-        width: 120px;
-        height: 120px;
-        padding: 4px;
-    }
-
-    .partnerName {
-        font-size: 12px;
-    }
-
-    .partnerDescription {
-        font-size: 10px;
-        text-align: left !important;
+        height: 150px;
+        width: 150px;
 
     }
-
-    .partnersSubtitle {
-        font-size: 12px;
-        margin-bottom: 32px;
-        max-width: 90vw;
-    }
-
-
-    .logoInfoWrapper {
-        flex-direction: row;
-        gap: 10px;
-    }
-
-
-
-
-    .partnerInfo {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: auto;
-        height: 100%;
-        transform: translate(0, 0);
-        opacity: 1;
-        pointer-events: none;
-        background: transparent;
-        box-shadow: none;
-        border-radius: 10px;
-        padding: 2px;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-    }
-
-
-    .logoInfoWrapper:hover .partnerInfo,
-    .logoInfoWrapper:focus-within .partnerInfo {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translate(0, 0);
-    }
-
-
 }

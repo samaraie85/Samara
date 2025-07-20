@@ -130,13 +130,13 @@
 .price {
     font-size: 28px;
     font-weight: 700;
-    color: #0f0;
+    color: #32BB00;
 }
 
 .originalPrice {
     font-size: 24px;
     font-weight: 600;
-    color: #999;
+    color: #ff6b6b;
     text-decoration: line-through;
     margin-right: 10px;
 }
@@ -144,7 +144,8 @@
 .discountPrice {
     font-size: 28px;
     font-weight: 700;
-    color: #ff6b6b;
+    color: #32BB00;
+
     margin-right: 10px;
 }
 

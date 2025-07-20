@@ -39,6 +39,9 @@ export async function GET(request: Request) {
         const userId = url.searchParams.get('userId');
         const page = parseInt(url.searchParams.get('page') || '1');
         const limit = parseInt(url.searchParams.get('limit') || '4');
+        const sort = url.searchParams.get('sort') || 'newest';
+        const dateFrom = url.searchParams.get('dateFrom');
+        const dateTo = url.searchParams.get('dateTo');
 
         if (!userId) {
             return NextResponse.json({ error: 'User ID is required' }, { status: 400 });
@@ -51,22 +54,13 @@ export async function GET(request: Request) {
         const cookieStore = cookies();
         const supabase = createRouteHandlerClient({ cookies: () => cookieStore });
 
-        // First get the total count of orders
-        const { count, error: countError } = await supabase
+        // Build the base query
+        let countQuery = supabase
             .from('orders')
             .select('id', { count: 'exact', head: true })
             .eq('user', userId);
 
-        if (countError) {
-            console.error('Count error:', countError);
-            return NextResponse.json({
-                error: 'Failed to count orders',
-                details: countError.message
-            }, { status: 500 });
-        }
-
-        // Then fetch paginated orders with their items
-        const { data: orders, error: ordersError } = await supabase
+        let ordersQuery = supabase
             .from('orders')
             .select(`
                 id,
@@ -92,9 +86,36 @@ export async function GET(request: Request) {
                     )
                 )
             `)
-            .eq('user', userId)
-            .order('created_at', { ascending: false })
+            .eq('user', userId);
+
+        // Apply date filters if provided
+        if (dateFrom) {
+            countQuery = countQuery.gte('created_at', dateFrom);
+            ordersQuery = ordersQuery.gte('created_at', dateFrom);
+        }
+        if (dateTo) {
+            countQuery = countQuery.lte('created_at', dateTo + 'T23:59:59');
+            ordersQuery = ordersQuery.lte('created_at', dateTo + 'T23:59:59');
+        }
+
+        // First get the total count of orders
+        const { count, error: countError } = await countQuery;
+
+        if (countError) {
+            console.error('Count error:', countError);
+            return NextResponse.json({
+                error: 'Failed to count orders',
+                details: countError.message
+            }, { status: 500 });
+        }
+
+        // Apply sorting and pagination
+        ordersQuery = ordersQuery
+            .order('created_at', { ascending: sort === 'oldest' })
             .range(offset, offset + limit - 1);
+
+        // Then fetch paginated orders with their items
+        const { data: orders, error: ordersError } = await ordersQuery;
 
         if (ordersError) {
             console.error('Orders error:', ordersError);
