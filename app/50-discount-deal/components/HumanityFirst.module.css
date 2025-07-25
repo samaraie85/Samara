@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: start;
     justify-content: start;
+    overflow-x: hidden;
 }
 
 .humanityFirst h2 {

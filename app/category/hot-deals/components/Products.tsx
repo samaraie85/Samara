@@ -125,25 +125,25 @@ const Products = ({ categoryId }: ProductsProps) => {
         fetchCategories();
     }, []);
 
-        // Check if current category is vegetables and show popup
-        useEffect(() => {
+    // Check if current category is vegetables and show popup
+    useEffect(() => {
 
-            // Check if any selected category from filter is vegetables
-            const isSelectedCategoryVegetables = selectedCategories.some(categoryId => {
-                const category = categories.find(cat => cat.id === categoryId);
-                return category && category.name.toLowerCase() === 'vegetables';
-            });
-    
-            if ((isSelectedCategoryVegetables) && !loading) {
-                // Add a small delay to ensure the page is fully loaded
-                const timer = setTimeout(() => {
-                    setShowVegetablesPopup(true);
-                }, 1000);
-    
-                return () => clearTimeout(timer);
-            }
-        }, [selectedCategories, categories, loading]);
-        
+        // Check if any selected category from filter is vegetables
+        const isSelectedCategoryVegetables = selectedCategories.some(categoryId => {
+            const category = categories.find(cat => cat.id === categoryId);
+            return category && category.name.toLowerCase() === 'vegetables';
+        });
+
+        if ((isSelectedCategoryVegetables) && !loading) {
+            // Add a small delay to ensure the page is fully loaded
+            const timer = setTimeout(() => {
+                setShowVegetablesPopup(true);
+            }, 1000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [selectedCategories, categories, loading]);
+
     // Toggle category selection
     const toggleCategory = (categoryId: number) => {
         setSelectedCategories(prev => {
@@ -246,6 +246,9 @@ const Products = ({ categoryId }: ProductsProps) => {
     if (error) {
         return <div className={styles.error}>Error: {error}</div>;
     }
+    const toggledCategoryNames = categories
+        .filter(cat => selectedCategories.includes(cat.id))
+        .map(cat => cat.name);
 
     return (
         <div className={styles.productsSection}>
@@ -268,7 +271,13 @@ const Products = ({ categoryId }: ProductsProps) => {
                         </div>
                     ) : products.length === 0 ? (
                         <div className={styles.noProductsFound}>
-                            <p>No products found matching your criteria.</p>
+                            <h1 className={styles.comingSoonTitle}>Coming Soon: {toggledCategoryNames.join(', ') || 'Products'}</h1>
+                            <p>
+                                We&apos;re working hard behind the scenes to bring you a selection of top-quality {toggledCategoryNames.join(', ') || 'products'} — fresh, flavorful, and responsibly sourced.
+                            </p>
+                            <p>
+                                This section isn&apos;t available <strong>just yet</strong>, but we&apos;re getting everything ready to make sure you get the very best.
+                            </p>
                         </div>
                     ) : (
                         products.map(product => (

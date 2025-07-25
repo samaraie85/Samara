@@ -155,6 +155,7 @@
     justify-content: center;
     width: 50%;
     margin-top: 1rem;
+    z-index: 10;
 }
 
 .footerLinksSection {
@@ -166,12 +167,31 @@
 }
 
 .footerDivider {
-    width: 2px;
-    background: #FFD54A44;
+    width: 4px;
     height: 70px;
     align-self: center;
-    border-radius: 2px;
-    margin: 0 8px;
+    border-radius: 8px;
+    margin: 0 18px;
+    background: linear-gradient(180deg, #FFD54A 0%, #fffbe6 50%, #FFD54A 100%);
+    box-shadow: 0 0 16px 2px #FFD54A55, 0 2px 8px #FFD54A22;
+    opacity: 0.95;
+    transition: box-shadow 0.2s, background 0.2s;
+    position: relative;
+}
+
+.footerDivider::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    background: radial-gradient(circle, #FFD54A55 0%, transparent 80%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .newsletterButton {
@@ -265,8 +285,19 @@
 
     .footerDivider {
         width: 80%;
-        height: 2px;
-        margin: 8px 0;
+        height: 4px;
+        margin: 18px 0;
+        background: linear-gradient(90deg, #FFD54A 0%, #fffbe6 50%, #FFD54A 100%);
+        box-shadow: 0 0 16px 2px #FFD54A55, 0 2px 8px #FFD54A22;
+    }
+
+    .footerDivider::after {
+        width: 100%;
+        height: 12px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background: radial-gradient(circle, #FFD54A55 0%, transparent 80%);
     }
 }
 

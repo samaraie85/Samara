@@ -250,6 +250,10 @@ const Products = ({ categoryId, initialCategory }: ProductsProps) => {
         return <div className={styles.error}>Error: {error}</div>;
     }
 
+    const toggledCategoryNames = categories
+        .filter(cat => selectedCategories.includes(cat.id))
+        .map(cat => cat.name);
+
     return (
         <div className={styles.productsSection}>
             <div data-aos="fade-right" className={styles.productsHeader}>
@@ -257,6 +261,7 @@ const Products = ({ categoryId, initialCategory }: ProductsProps) => {
                     All <span className={styles.categoryName}>Products</span> <span className={styles.productCount}>({totalProducts} Products)</span>
                 </h2>
             </div>
+
 
             <div className={styles.productsContainer}>
                 <div className={styles.productsList}>
@@ -271,9 +276,9 @@ const Products = ({ categoryId, initialCategory }: ProductsProps) => {
                         </div>
                     ) : products.length === 0 ? (
                         <div className={styles.noProductsFound}>
-                            <h1 className={styles.comingSoonTitle}>Coming Soon: {initialCategory?.name || 'Products'}</h1>
+                            <h1 className={styles.comingSoonTitle}>Coming Soon: {toggledCategoryNames.join(', ') || initialCategory?.name || 'Products'}</h1>
                             <p>
-                                We&apos;re working hard behind the scenes to bring you a selection of top-quality {initialCategory?.name?.toLowerCase() || 'products'} — fresh, flavorful, and responsibly sourced.
+                                We&apos;re working hard behind the scenes to bring you a selection of top-quality {toggledCategoryNames.join(', ') || initialCategory?.name?.toLowerCase() || 'products'} — fresh, flavorful, and responsibly sourced.
                             </p>
                             <p>
                                 This section isn&apos;t available <strong>just yet</strong>, but we&apos;re getting everything ready to make sure you get the very best.

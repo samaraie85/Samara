@@ -9,8 +9,10 @@ import styles from './Cart.module.css';
 import Hero from './components/Hero';
 import { supabase } from '@/lib/supabase';
 import cartImage from '../assets/cart-image.png';
+import lo from '../assets/loading_1.gif';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from 'next/link';
 
 
 // Cart item type
@@ -181,11 +183,16 @@ export default function CartPage() {
 
     if (loading) {
         return (
-            <div className={styles.cartPage}>
-                <div className={styles.cartContainer} data-aos="fade-up">
-                    <p>Loading your cart...</p>
+            <>
+                <Hero data-aos="fade-down" />
+                <div className={styles.cartPage}>
+                    <div className={styles.cartContainer} data-aos="fade-up">
+                        <div className={styles.loadingContainer}>
+                            <Image src={lo} alt="cart-bg" width={100} height={100} />
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </>
         );
     }
 
@@ -194,8 +201,10 @@ export default function CartPage() {
             <>
                 <Hero data-aos="fade-down" />
                 <div className={styles.cartPage}>
-                    <div className={styles.cartContainer} data-aos="fade-up">
-                        <p>Your cart is empty. Start shopping to add items to your cart.</p>
+                    <div className={styles.emptyCartContainer} data-aos="fade-up">
+                        <div className={styles.emptyCartIcon}>🛒</div>
+                        <p className={styles.emptyCartText}>Your cart is empty.<br />Start shopping to add items to your cart.</p>
+                        <Link href="/category" className={styles.emptyCartButton}>Go to Shop</Link>
                     </div>
                 </div>
             </>

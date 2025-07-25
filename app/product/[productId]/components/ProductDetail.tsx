@@ -55,6 +55,7 @@ const ProductDetail = ({ productId }: ProductDetailProps) => {
     const [quantity, setQuantity] = useState(1);
     const [selectedImage, setSelectedImage] = useState('');
     const { isAuthenticated, user } = useAuth();
+    const [showPopup, setShowPopup] = useState(false);
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -93,6 +94,13 @@ const ProductDetail = ({ productId }: ProductDetailProps) => {
         AOS.refresh();
     });
 
+    useEffect(() => {
+        if (showPopup) {
+            const timer = setTimeout(() => setShowPopup(false), 1800);
+            return () => clearTimeout(timer);
+        }
+    }, [showPopup]);
+    
     const handleAddToCart = async () => {
         if (!isAuthenticated || !user) {
             window.location.href = '/login?redirect=back';
@@ -115,7 +123,8 @@ const ProductDetail = ({ productId }: ProductDetailProps) => {
                 throw new Error('Failed to add item to cart');
             }
 
-            console.log(`Added ${product?.name} to cart with quantity ${quantity}`);
+            setShowPopup(true);
+            // console.log(`Added ${product?.name} to cart with quantity ${quantity}`);
             // Add success notification here
         } catch (error) {
             console.error('Error adding to cart:', error);
@@ -146,8 +155,22 @@ const ProductDetail = ({ productId }: ProductDetailProps) => {
             : [])
     ].filter(Boolean); // Remove any nulls/undefined
 
+
+
     return (
         <div className={styles.productDetail}>
+            {showPopup && (
+                <div className={styles.popup}>
+                    <div className={styles.popupContent}>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="12" fill="#4BB543" />
+                            <path d="M7 13l3 3 7-7" stroke="#fff" strokeWidth="2" fill="none" />
+                        </svg>
+                        <span>Added to cart!</span>
+                    </div>
+                </div>
+            )}
+
             <div className={styles.mainContent}>
 
                 <div data-aos="fade-right" className={styles.productInfo} >

@@ -252,6 +252,10 @@ const Products = ({ categoryId }: ProductsProps) => {
         return <div className={styles.error}>Error: {error}</div>;
     }
 
+    const toggledCategoryNames = categories
+        .filter(cat => selectedCategories.includes(cat.id))
+        .map(cat => cat.name);
+
     return (
         <div className={styles.productsSection}>
             <div data-aos="fade-right" className={styles.productsHeader}>
@@ -273,9 +277,9 @@ const Products = ({ categoryId }: ProductsProps) => {
                         </div>
                     ) : products.length === 0 ? (
                         <div className={styles.noProductsFound}>
-                            <h1 className={styles.comingSoonTitle}>Coming Soon: Products</h1>
+                            <h1 className={styles.comingSoonTitle}>Coming Soon: {toggledCategoryNames.join(', ') || 'Products'}</h1>
                             <p>
-                                We&apos;re working hard behind the scenes to bring you a selection of top-quality products — fresh, flavorful, and responsibly sourced.
+                                We&apos;re working hard behind the scenes to bring you a selection of top-quality {toggledCategoryNames.join(', ') || 'products'} — fresh, flavorful, and responsibly sourced.
                             </p>
                             <p>
                                 This section isn&apos;t available <strong>just yet</strong>, but we&apos;re getting everything ready to make sure you get the very best.

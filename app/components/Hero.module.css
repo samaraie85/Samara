@@ -357,8 +357,9 @@
     }
 
     .description {
-        font-size: 11px;
+        font-size: 16px;
         margin-bottom: 15px;
+
     }
 
     .buttons {
@@ -378,14 +379,14 @@
     }
 
     .sliderButtons {
-        left: 10px;
-        bottom: 15px;
+        left: 20px;
+        bottom: 25px;
     }
 
     .sliderButton {
-        width: 20px;
-        height: 20px;
-        font-size: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
     }
 
     .indicator {

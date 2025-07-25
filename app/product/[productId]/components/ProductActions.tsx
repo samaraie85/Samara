@@ -38,6 +38,8 @@ const ProductActions = ({ quantity, onIncrement, onDecrement, onAddToCart, produ
         }
     }, [userId, productId, checkWishlistStatus]);
 
+ 
+
     const toggleWishlist = async () => {
         if (!userId) {
             // Redirect to login if user is not authenticated
@@ -85,7 +87,9 @@ const ProductActions = ({ quantity, onIncrement, onDecrement, onAddToCart, produ
     };
 
     return (
+
         <div className={styles.actionsSection}>
+          
             <div className={styles.quantityContainer}>
                 <span className={styles.quantityLabel}>Quantity</span>
                 <div className={styles.quantityControls}>
@@ -143,7 +147,7 @@ const ProductActions = ({ quantity, onIncrement, onDecrement, onAddToCart, produ
             <div className={styles.cartWishlistRow}>
                 <button
                     className={styles.addToCartBtn}
-                    onClick={onAddToCart}
+                     onClick={onAddToCart}
                 >
                     Add To Cart
                 </button>

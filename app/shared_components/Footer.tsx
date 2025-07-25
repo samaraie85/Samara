@@ -54,6 +54,19 @@ const Footer = () => {
                             Samara is an Arabic brand,specializing in selling high quality Arabic products that are distinguished by their arabic authenticity.Samara Established in 2024 and its goal is to feel good and return to using our authentic arabic products.
                         </p>
 
+                        <div
+                            style={{
+                                width: '100%',
+                                height: '6px',
+                                margin: '36px 0',
+                                borderRadius: '8px',
+                                background: 'linear-gradient(90deg, #FFD54A 0%, #fffbe6 50%, #FFD54A 100%)',
+                                boxShadow: '0 0 18px 2px #FFD54A55, 0 2px 8px #FFD54A22',
+                                opacity: 0.98,
+                                position: 'relative',
+                            }}
+                        />
+
                         <p className={styles.newsletterText}>
                             <strong>Stay tuned!</strong>👀<br />
                             Add your email to our newsletter and be the first to know when our meat collection goes live — plus get exclusive updates and offers straight to your inbox!
@@ -93,12 +106,13 @@ const Footer = () => {
                                 <li><Link href="/profile">Your Account</Link></li>
                                 <li><Link href="/delivery-coverage">Delivery Coverage</Link></li>
                                 <li><Link href="/health">Health and wellbeing</Link></li>
-                                <li><Link href="/careers">Careers</Link></li>
+                                <li><Link href="https://form.jotform.com/250564921892363">Careers</Link></li>
                                 <li><Link href="/about">About us</Link></li>
                                 <li><Link href="/contact-us">Contact us</Link></li>
                             </ul>
                         </div>
                         <div className={styles.footerDivider} />
+
                         <div className={styles.footerLinksSection}>
                             <div
                                 className={styles.linksTitle}
@@ -115,7 +129,7 @@ const Footer = () => {
                             }}>
                                 <li><Link href="/delivery-policies">Delivery policy</Link></li>
                                 <li><Link href="/refund-policy">Refund policy</Link></li>
-                                <li><Link href="/privacy-policy">Privacy policy</Link></li>
+                                <li><Link href="/our-policies">Privacy policy</Link></li>
                                 <li><Link href="/terms">Terms and conditions</Link></li>
                                 <li><Link href="/faqs">FAQs</Link></li>
                             </ul>
@@ -135,7 +149,7 @@ const Footer = () => {
                             <ul className={styles.linksList} style={{
                                 display: collapsedSections.shopDeals ? 'none' : 'block'
                             }}>
-                                <li><Link href="/hot-deal">Hot deal</Link></li>
+                                <li><Link href="category/hot-deals">Hot deal</Link></li>
                                 <li><Link href="/50-discount-deal">50% deal</Link></li>
                                 <li><Link href="/points-deal">Points deal</Link></li>
                                 <li><Link href="/delivery-deal">Delivery deal</Link></li>
