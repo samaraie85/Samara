@@ -1,6 +1,6 @@
 'use client';
-import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useState, useEffect, Suspense } from 'react';
 import ProductCard from '../shared_components/ProductCard';
 import styles from './search.module.css';
 import Navbar from '../shared_components/Navbar';
@@ -8,22 +8,20 @@ import Navbar from '../shared_components/Navbar';
 interface Product {
     id: number;
     name: string;
-    price: number;
-    discount_price: number;
     image: string;
-    category: number;
+    price: number;
+    discount_price?: number;
     categoryName: string;
     qty_per_unit: number;
     unitName: string;
-    savings: number;
 }
 
-export default function SearchPage() {
+function SearchResults() {
     const searchParams = useSearchParams();
     const query = searchParams.get('q') || '';
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -74,6 +72,19 @@ export default function SearchPage() {
         );
     }
 
+    if (error) {
+        return (
+            <div className={styles.searchPage}>
+                <Navbar />
+
+                <div className={styles.error}>
+                    <h2>Error</h2>
+                    <p>{error}</p>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className={styles.searchPage}>
             <Navbar />
@@ -85,34 +96,41 @@ export default function SearchPage() {
                         Showing results for: <strong>{query}</strong>
                     </p>
                 )}
-                <p className={styles.resultCount}>
-                    {products.length} product{products.length !== 1 ? 's' : ''} found
-                </p>
+
+                {!loading && products.length === 0 && query && (
+                    <div className={styles.noResults}>
+                        <h2>No products found</h2>
+                        <p>Try searching with different keywords or browse our categories.</p>
+                    </div>
+                )}
+
+                {products.length > 0 && (
+                    <div className={styles.productsGrid}>
+                        {products.map((product) => (
+                            <ProductCard
+                                key={product.id}
+                                product={product}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
-
-            {error && (
-                <div className={styles.error}>
-                    <p>{error}</p>
-                </div>
-            )}
-
-            {!loading && products.length === 0 && query && (
-                <div className={styles.noResults}>
-                    <h2>No products found</h2>
-                    <p>Try searching with different keywords or browse our categories.</p>
-                </div>
-            )}
-
-            {products.length > 0 && (
-                <div className={styles.productsGrid}>
-                    {products.map((product) => (
-                        <ProductCard
-                            key={product.id}
-                            product={product}
-                        />
-                    ))}
-                </div>
-            )}
         </div>
+    );
+}
+
+export default function SearchPage() {
+    return (
+        <Suspense fallback={
+            <div className={styles.searchPage}>
+                <Navbar />
+                <div className={styles.loading}>
+                    <div className={styles.spinner}></div>
+                    <p>Loading...</p>
+                </div>
+            </div>
+        }>
+            <SearchResults />
+        </Suspense>
     );
 } 

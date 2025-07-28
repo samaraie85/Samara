@@ -413,10 +413,12 @@ const MyOrders: React.FC<MyOrdersProps> = ({ user }) => {
                                                 <td>
                                                     <div className={styles.productInfo}>
                                                         {item.products?.image && (
-                                                            <img
+                                                            <Image
                                                                 src={item.products.image}
                                                                 alt={item.products.name}
                                                                 className={styles.productImage}
+                                                                width={100}
+                                                                height={100}
                                                             />
                                                         )}
                                                         <span>{item.products?.name || 'Unknown Product'}</span>

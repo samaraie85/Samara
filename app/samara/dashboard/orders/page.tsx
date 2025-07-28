@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import DashboardLayout from '../components/DashboardLayout';
 import styles from './orders.module.css';
 import { supabase } from '@/lib/supabase';
+import Image from 'next/image';
 
 interface OrderItem {
     id: string;
@@ -307,10 +308,12 @@ export default function OrdersPage() {
                                                 <td>
                                                     <div className={styles.productInfo}>
                                                         {item.products?.image && (
-                                                            <img
+                                                            <Image
                                                                 src={item.products.image}
                                                                 alt={item.products.name}
                                                                 className={styles.productImage}
+                                                                width={100}
+                                                                height={100}
                                                             />
                                                         )}
                                                         <span>{item.products?.name || 'Unknown Product'}</span>
