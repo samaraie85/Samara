@@ -1,6 +1,9 @@
+"use client";
+
 import React, { useEffect, useState } from 'react';
 import styles from './Modal.module.css';
 import { useAuth } from '@/lib/authContext';
+import confetti from 'canvas-confetti';
 
 interface Props {
     onClose: () => void;
@@ -12,6 +15,38 @@ interface WalletData {
 }
 
 const SecondModal: React.FC<Props> = ({ onClose }) => {
+
+    const fireConfetti = () => {
+        const end = Date.now() + 3 * 1000; // 3 seconds
+        const colors = ["#CDA00D", "#ffffff", "#CDA00D", "#ffffff"];
+
+        const frame = () => {
+            if (Date.now() > end) return;
+
+            confetti({
+                particleCount: 2,
+                angle: 60,
+                spread: 55,
+                startVelocity: 60,
+                origin: { x: 0, y: 0.5 },
+                colors: colors,
+            });
+            confetti({
+                particleCount: 2,
+                angle: 120,
+                spread: 55,
+                startVelocity: 60,
+                origin: { x: 1, y: 0.5 },
+                colors: colors,
+            });
+
+            requestAnimationFrame(frame);
+        };
+
+        frame();
+    };
+
+
     const { user } = useAuth();
     const [walletData, setWalletData] = useState<WalletData | null>(null);
     const [loading, setLoading] = useState(false);
@@ -90,7 +125,12 @@ const SecondModal: React.FC<Props> = ({ onClose }) => {
                     <div className={styles.rightBoxCol}>
                         <div
                             className={`${styles.board} ${styles.boxWrapper}`}
-                            onClick={() => !boxOpen && setBoxOpen(true)}
+                            onClick={() => {
+                                if (!boxOpen) {
+                                    setBoxOpen(true);
+                                    fireConfetti();
+                                }
+                            }}
                             style={{ cursor: boxOpen ? 'default' : 'pointer' }}
                         >
                             <div className={`${styles.box} ${boxOpen ? styles.open : ''}`}>
@@ -108,13 +148,8 @@ const SecondModal: React.FC<Props> = ({ onClose }) => {
                                 </div>
                             </div>
                             {showPoints && (
-                                <div className={styles.fireworks}>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
+                                <>
+                                </>
                             )}
                         </div>
                     </div>

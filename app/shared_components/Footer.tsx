@@ -5,7 +5,7 @@ import Image from 'next/image';
 import logo from '../assets/logo.png';
 import lantern from '../assets/lantern.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTiktok, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faTiktok, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -84,6 +84,7 @@ const Footer = () => {
                                 <a href="https://www.facebook.com/IrSamaraHub" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebookF} /></a>
                                 <a href="https://www.instagram.com/irsamarahub" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
                                 <a href="https://www.tiktok.com/@irsamarahub" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTiktok} /></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>
                             </div>
                         </div>
                     </div>

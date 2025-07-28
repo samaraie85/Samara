@@ -317,67 +317,7 @@
     font-size: 0.93em;
 }
 
-.fireworks {
-    position: absolute;
-    left: 63%;
-    top: 10%;
-    width: 160px;
-    height: 160px;
-    pointer-events: none;
-    z-index: 1;
-}
 
-.fireworks span {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 14px;
-    height: 60px;
-    border-radius: 7px;
-    opacity: 0;
-    transform: translateX(-50%) scale(0.5) rotate(var(--angle, 0deg));
-    animation: fireworkBurst 5s cubic-bezier(.68, -0.55, .27, 1.55) forwards;
-}
-
-.fireworks span:nth-child(1) {
-    background: #FFD700;
-    --angle: -18deg;
-    --dx: -60px;
-    --dy: -160px;
-    animation-delay: 0s;
-}
-
-.fireworks span:nth-child(2) {
-    background: #CDA00D;
-    --angle: 18deg;
-    --dx: 60px;
-    --dy: -140px;
-    animation-delay: 0.4s;
-}
-
-.fireworks span:nth-child(3) {
-    background: #fff;
-    --angle: -36deg;
-    --dx: -90px;
-    --dy: -100px;
-    animation-delay: 0.8s;
-}
-
-.fireworks span:nth-child(4) {
-    background: #CDA00D;
-    --angle: 36deg;
-    --dx: 90px;
-    --dy: -100px;
-    animation-delay: 1.2s;
-}
-
-.fireworks span:nth-child(5) {
-    background: #FFD700;
-    --angle: 0deg;
-    --dx: 0px;
-    --dy: -180px;
-    animation-delay: 1.6s;
-}
 
 @keyframes fireworkBurst {
     0% {
