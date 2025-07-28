@@ -34,6 +34,8 @@ interface SlideData {
 
 const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
     const slides: SlideData[] = [
         {
@@ -96,6 +98,31 @@ const Hero = () => {
         setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     };
 
+    // Touch handlers for swipe functionality
+    const onTouchStart = (e: React.TouchEvent) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e: React.TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > 50;
+        const isRightSwipe = distance < -50;
+
+        if (isLeftSwipe) {
+            nextSlide();
+        }
+        if (isRightSwipe) {
+            prevSlide();
+        }
+    };
+
     // Auto-play carousel
     useEffect(() => {
         const interval = setInterval(() => {
@@ -108,14 +135,16 @@ const Hero = () => {
     const currentSlideData = slides[currentSlide];
 
     return (
-        <section className={styles.hero} style={{ backgroundImage: ` linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),url(${currentSlideData.image})` }}>
+        <section
+            className={styles.hero}
+            style={{ backgroundImage: ` linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),url(${currentSlideData.image})` }}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+        >
             <Navbar />
             <div className={styles.textContent}>
-
-
-
                 <div className={styles.supTextContent} style={{ width: currentSlideData.theme !== 'brand' ? '90%' : 'max-content' }}>
-
                     <h1 className={`${styles.title} ${styles[currentSlideData.theme]}`}>
                         {currentSlideData.title}
                     </h1>
@@ -164,8 +193,6 @@ const Hero = () => {
                     <FontAwesomeIcon icon={faAngleRight} />
                 </button>
             </div>
-
-
 
             {currentSlideData.theme === 'brand' && (
                 <div className={styles.imageWrapper}>

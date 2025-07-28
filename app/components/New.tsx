@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './New.module.css';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import loadingGif from '../assets/loading_1.gif';
 import { useAuth } from '@/lib/authContext';
@@ -119,7 +119,10 @@ const Hotdeals = () => {
     return (
         <section className={styles.hotdeals}>
             <div className={styles.hotdealsContent}>
-                <h1 data-aos="fade-right"><span>Newest</span> Products</h1>
+                <h1 className={styles.sectionTitle} data-aos="fade-right">
+                    <FontAwesomeIcon icon={faStar} className={styles.starIcon} style={{ color: "#FFD700", fontSize: "1.2rem" }} />
+                    <span>Newest</span> Products
+                </h1>
                 <Link data-aos="fade-left" className={styles.viewAll} href="/category">View All <FontAwesomeIcon className={styles.arrowIcon} icon={faArrowRight} /></Link>
             </div>
             <div className={styles.hotdealsProducts}>

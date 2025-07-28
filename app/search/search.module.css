@@ -1,0 +1,150 @@
+.searchPage {
+    min-height: 100vh;
+    background: #252525;
+    padding: 150px 20px 40px 20px;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.searchHeader {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+.searchHeader h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #FFD700;
+    font-family: var(--font-aclonica, sans-serif);
+}
+
+.searchQuery {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.searchQuery strong {
+    color: #FFD700;
+}
+
+.resultCount {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 32px;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #FFD70033;
+    border-top: 4px solid #FFD700;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading p {
+    font-size: 1.1rem;
+    color: #FFD700;
+}
+
+.error {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    border-radius: 8px;
+    color: #dc3545;
+}
+
+.noResults {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.noResults h2 {
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 16px;
+    font-family: var(--font-aclonica, sans-serif);
+}
+
+.noResults p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.productsGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .searchPage {
+        padding: 100px 16px 32px 16px;
+    }
+
+    .searchHeader h1 {
+        font-size: 2rem;
+    }
+
+    .searchQuery {
+        font-size: 1rem;
+    }
+
+    .productsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .noResults h2 {
+        font-size: 1.5rem;
+    }
+
+    .noResults p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .searchHeader h1 {
+        font-size: 1.8rem;
+    }
+
+    .productsGrid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}

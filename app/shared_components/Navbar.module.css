@@ -15,6 +15,7 @@
     background-color: transparent;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
     background-color: #1a1a1add;
 }
@@ -191,16 +192,44 @@
 }
 
 .cartButton {
-    background: transparent;
+    position: relative;
+    background: none;
     border: none;
+    color: #fff;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
 
+.cartButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFD700;
+}
+
+.cartBadge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid #1a1a1a;
+    min-width: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .loginButton {
@@ -612,7 +641,7 @@
         display: flex;
     }
 
- 
+
 
     .loginButton {
         padding: 8px 16px;

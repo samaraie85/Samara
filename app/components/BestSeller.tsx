@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
 import styles from './BestSeller.module.css';
 import loadingGif from '../assets/loading_1.gif';
 import { useAuth } from '@/lib/authContext';
@@ -117,6 +117,7 @@ const BestSeller = () => {
     return (
         <section className={styles.bestSeller} >
             <h1 className={styles.sectionTitle} data-aos="fade-right">
+                <FontAwesomeIcon icon={faStar} className={styles.starIcon} style={{ color: "#FFD700", fontSize: "1.2rem" }} />
                 <span className={styles.best}>Best</span> Seller
             </h1>
 

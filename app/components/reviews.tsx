@@ -68,7 +68,10 @@ export default function Reviews() {
             <Image src={p} className={styles.pattern1} alt="reviews" width={100} height={100} />
             <Image src={p} className={styles.pattern2} alt="reviews" width={100} height={100} />
             <div className={styles.hotdealsContent}>
-                <h1 data-aos="fade-right"><span>Customers</span> Reviewes</h1>
+                <h1 className={styles.sectionTitle} data-aos="fade-right">
+                    <FontAwesomeIcon icon={faStar} className={styles.starIcon} style={{ color: "#FFD700", fontSize: "1.2rem" }} />
+                    <span>Customers</span> Reviewes
+                </h1>
                 <Link data-aos="fade-left" className={styles.viewAll} href="/reviews">View All <FontAwesomeIcon className={styles.arrowIcon} icon={faArrowRight} /></Link>
             </div>
             <div className={styles.reviewsContainer}>

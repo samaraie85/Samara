@@ -19,6 +19,11 @@ import { usePathname } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { User } from '@supabase/supabase-js';
 
+interface CartItem {
+    id: number;
+    quantity: number;
+}
+
 const Navbar = () => {
     const pathname = usePathname();
     const [showTopBar, setShowTopBar] = useState(true);
@@ -29,6 +34,8 @@ const Navbar = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [isInfoOpen, setIsInfoOpen] = useState(false);
+    const [cartItemCount, setCartItemCount] = useState(0);
+    const [searchQuery, setSearchQuery] = useState('');
 
     // Add useRef for dropdown and mobile menu
     const dropdownRef = useRef<HTMLDivElement>(null);
@@ -54,6 +61,8 @@ const Navbar = () => {
 
                 if (session?.user) {
                     setUser(session.user);
+                    // Fetch cart count for authenticated users
+                    await fetchCartCount(session.user.id);
                 }
             } catch (error) {
                 console.error('Error fetching user:', error);
@@ -68,8 +77,11 @@ const Navbar = () => {
         const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
             if (event === 'SIGNED_IN' && session?.user) {
                 setUser(session.user);
+                // Fetch cart count for authenticated users
+                fetchCartCount(session.user.id);
             } else if (event === 'SIGNED_OUT') {
                 setUser(null);
+                setCartItemCount(0);
             }
         });
 
@@ -126,6 +138,33 @@ const Navbar = () => {
     const toggleSearch = () => {
         setIsSearchOpen(!isSearchOpen);
         setIsMobileMenuOpen(false);
+    };
+
+    const fetchCartCount = async (userId: string) => {
+        try {
+            const response = await fetch(`/api/cart?user=${userId}`);
+            if (response.ok) {
+                const cartItems = await response.json();
+                const totalCount = cartItems.reduce((sum: number, item: CartItem) => sum + item.quantity, 0);
+                setCartItemCount(totalCount);
+            }
+        } catch (error) {
+            console.error('Error fetching cart count:', error);
+        }
+    };
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (searchQuery.trim()) {
+            // Navigate to search results page with query
+            window.location.href = `/search?q=${encodeURIComponent(searchQuery.trim())}`;
+            setSearchQuery('');
+            setIsSearchOpen(false);
+        }
+    };
+
+    const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchQuery(e.target.value);
     };
 
     return (
@@ -257,10 +296,15 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faSearch} />
                     </button>
 
-                    <div className={`${styles.searchBar} ${isSearchOpen ? styles.active : ''}`}>
+                    <form onSubmit={handleSearch} className={`${styles.searchBar} ${isSearchOpen ? styles.active : ''}`}>
                         <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
-                        <input type="text" placeholder="Search" />
-                    </div>
+                        <input
+                            type="text"
+                            placeholder="Search products..."
+                            value={searchQuery}
+                            onChange={handleSearchInputChange}
+                        />
+                    </form>
 
                     <button className={styles.langButton}>
                         <Image src={lang} alt="English" width={20} height={20} />
@@ -283,6 +327,9 @@ const Navbar = () => {
 
                     <Link href="/shopping-cart" className={styles.cartButton}>
                         <FontAwesomeIcon icon={faBagShopping} />
+                        {cartItemCount > 0 && (
+                            <span className={styles.cartBadge}>{cartItemCount}</span>
+                        )}
                     </Link>
 
 
