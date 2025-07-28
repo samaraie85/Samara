@@ -24,6 +24,31 @@
     transition: box-shadow 0.3s, background 0.3s;
 }
 
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .chatBox {
+        max-width: 80%;
+        min-height: 65vh;
+        margin-bottom: 24px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .chatContainer {
+        min-height: 70vh;
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    .chatBox {
+        max-width: 100%;
+        min-height: calc(70vh - 32px);
+        margin-bottom: 16px;
+        border-radius: 16px;
+    }
+}
+
 .messagesArea {
     flex: 1;
     overflow-y: auto;
@@ -35,6 +60,23 @@
     font-size: 1.13rem;
 }
 
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .messagesArea {
+        padding: 32px 24px 24px 24px;
+        gap: 18px;
+        font-size: 1.05rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .messagesArea {
+        padding: 20px 16px 16px 16px;
+        gap: 16px;
+        font-size: 1rem;
+    }
+}
 
 .userMessage,
 .botMessage {
@@ -66,6 +108,15 @@
     align-self: flex-start;
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+
+    .userMessage,
+    .botMessage {
+        gap: 8px;
+    }
+}
+
 .avatar {
     width: 38px;
     height: 38px;
@@ -84,6 +135,24 @@
     background: #252525;
     color: #fff;
     border: 2px solid #FFD70033;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .avatar {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
 }
 
 .bubble {
@@ -112,6 +181,24 @@
     margin-right: 0;
 }
 
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .bubble {
+        max-width: 80vw;
+        padding: 8px 20px;
+        font-size: 1.05rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .bubble {
+        max-width: 85vw;
+        padding: 8px 16px;
+        font-size: 1rem;
+        min-width: 50px;
+    }
+}
 
 .sender {
     display: none;
@@ -134,9 +221,28 @@
     padding-right: 10px;
     align-self: center;
     background: #252525;
-
 }
 
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .inputArea {
+        height: 90px;
+        width: 92%;
+        border-radius: 24px;
+        margin: 8px 8px 8px 8px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .inputArea {
+        height: 80px;
+        width: 90%;
+        border-radius: 20px;
+        margin: 8px 8px 8px 8px;
+        padding-right: 8px;
+    }
+}
 
 .textarea {
     font-size: 1rem;
@@ -155,7 +261,23 @@
     box-shadow: none;
 }
 
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .textarea {
+        font-size: 0.95rem;
+        padding: 16px 18px;
+        width: 88%;
+    }
+}
 
+/* Mobile styles */
+@media (max-width: 768px) {
+    .textarea {
+        font-size: 0.9rem;
+        padding: 14px 16px;
+        width: 85%;
+    }
+}
 
 .sendButton {
     background: #FFD700;
@@ -168,10 +290,25 @@
     font-size: 1.4rem;
     padding: 5px;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-
 }
 
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .sendButton {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
 
+/* Mobile styles */
+@media (max-width: 768px) {
+    .sendButton {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
 
 .sendButton:hover:not(:disabled) {
     background: linear-gradient(90deg, #FFD700 80%, #CE9E00 100%);
@@ -193,6 +330,23 @@
     animation: blink 1.2s infinite;
 }
 
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .typingIndicator {
+        font-size: 1rem;
+        padding-left: 42px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .typingIndicator {
+        font-size: 0.95rem;
+        padding-left: 40px;
+        margin: 6px 0 0 0;
+    }
+}
+
 @keyframes blink {
 
     0%,
@@ -211,4 +365,11 @@
     background: linear-gradient(90deg, transparent, #FFD70044 50%, transparent);
     margin: 18px 0;
     border: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .divider {
+        margin: 12px 0;
+    }
 }
