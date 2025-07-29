@@ -13,6 +13,7 @@ const SignupForm = () => {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [message, setMessage] = useState<string | null>(null);
@@ -97,47 +98,31 @@ const SignupForm = () => {
                     if (!response.ok) {
                         console.error('API error response:', result);
                         setError(result.error || 'Failed to create user profile');
-
-                        // Set detailed error info if available
-                        if (result.details) {
-                            setErrorDetails(
-                                typeof result.details === 'string'
-                                    ? result.details
-                                    : JSON.stringify(result.details, null, 2)
-                            );
-                        }
-
-                        if (result.hint) {
-                            setErrorDetails((prev) =>
-                                prev ? `${prev}\n\nHint: ${result.hint}` : `Hint: ${result.hint}`
-                            );
-                        }
-
-                        throw new Error(result.error || 'Failed to create user profile');
+                        setErrorDetails(result.details || result.hint || 'Unknown error occurred');
+                        return;
                     }
 
-                    // Success message
-                    setMessage('Success! Please check your email for a verification link.');
-                    setErrorDetails(null);
+                    // Success! Show success message
+                    setMessage('Account created successfully! Please check your email to verify your account.');
 
-                    // Reset form
-                    setFullName('');
-                    setEmail('');
-                    setPassword('');
-                } catch (error: unknown) {
-                    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-                    console.error('Error saving user data:', errorMessage);
-                    setError(errorMessage || 'Error saving user data. Please try again.');
+                } catch (apiError) {
+                    console.error('API call error:', apiError);
+                    setError('Failed to create user profile');
+                    setErrorDetails(apiError instanceof Error ? apiError.message : 'Unknown API error');
                 }
             }
 
-        } catch (error: unknown) {
-            const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-            console.error('Error signing up:', errorMessage);
-            setError(errorMessage || 'Failed to sign up. Please try again.');
+        } catch (error) {
+            console.error('Signup error:', error);
+            setError('Failed to create account');
+            setErrorDetails(error instanceof Error ? error.message : 'Unknown error occurred');
         } finally {
             setLoading(false);
         }
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     };
 
     return (
@@ -146,8 +131,8 @@ const SignupForm = () => {
             <div className={styles.loginLeft}>
                 <h1 className={styles.loginTitle}>Sign up</h1>
                 <div className={styles.loginCard}>
-                    <h2 className={styles.loginTitle1}>Hello!</h2>
-                    <p className={styles.loginSubtitle}>Sign Up to Get Started</p>
+                    <h2 className={styles.loginTitle1}>Create your account</h2>
+                    <p className={styles.loginSubtitle}>Join Samara</p>
 
                     {error && (
                         <div className={styles.errorMessage}>
@@ -203,7 +188,7 @@ const SignupForm = () => {
                                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 13a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 12 13zm7-4h-1V7A6 6 0 0 0 6 7v2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zM8 7a4 4 0 0 1 8 0v2H8z" /></svg>
                             </span>
                             <input
-                                type="password"
+                                type={showPassword ? "text" : "password"}
                                 placeholder="Password"
                                 className={styles.textInput}
                                 value={password}
@@ -211,6 +196,24 @@ const SignupForm = () => {
                                 disabled={loading}
                                 required
                             />
+                            <button
+                                type="button"
+                                className={styles.eyeIcon}
+                                onClick={togglePasswordVisibility}
+                                disabled={loading}
+                            >
+                                {showPassword ? (
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                                        <line x1="1" y1="1" x2="23" y2="23" />
+                                    </svg>
+                                ) : (
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
+                                )}
+                            </button>
                         </div>
 
                         <button
