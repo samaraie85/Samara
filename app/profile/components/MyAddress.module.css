@@ -302,3 +302,405 @@
     margin-right: 8px;
     font-size: 16px;
 }
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .addressCard {
+        padding: 18px;
+        gap: 15px;
+    }
+
+    .addressForm {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .addressForm {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .formActions {
+        grid-column: span 1;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .submitButton,
+    .cancelButton {
+        width: 100%;
+        text-align: center;
+    }
+
+    .formSection {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .addressCard {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .addressContent {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .addressHeader {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .addressActions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 15px;
+        gap: 10px;
+    }
+
+    .addAddressButton {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    .addressForm {
+        gap: 12px;
+    }
+
+    .formField {
+        gap: 6px;
+        margin-bottom: 15px;
+    }
+
+    .formLabel {
+        font-size: 0.9rem;
+    }
+
+    .formInput {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        min-height: 44px;
+        /* Minimum touch target size */
+    }
+
+    .cityWarning {
+        font-size: 0.8rem;
+        padding: 8px;
+        margin-top: 10px;
+    }
+
+    .warningIcon {
+        font-size: 14px;
+    }
+
+    .formSection {
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .formTitle {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* Improve touch targets for mobile */
+    .editAction,
+    .deleteAction {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Better spacing for address cards on mobile */
+    .addressList {
+        gap: 12px;
+    }
+
+    /* Improve select dropdown on mobile */
+    .formInput[type="text"],
+    .formInput[type="email"],
+    .formInput[type="tel"],
+    select.formInput {
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    /* Better focus states for mobile */
+    .formInput:focus {
+        outline: 2px solid #F1B901;
+        outline-offset: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .addressCard {
+        padding: 12px;
+        border-radius: 15px;
+    }
+
+    .addressName {
+        font-size: 0.9rem;
+    }
+
+    .addressLine {
+        font-size: 0.8rem;
+    }
+
+    .formSection {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .formTitle {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .formLabel {
+        font-size: 0.85rem;
+    }
+
+    .formInput {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    .submitButton,
+    .cancelButton {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+
+    .addAddressButton {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+
+    .cityWarning {
+        font-size: 0.75rem;
+        padding: 6px;
+    }
+
+    .warningIcon {
+        font-size: 12px;
+    }
+
+    .editAction {
+        padding: 6px 25px;
+        font-size: 0.8rem;
+    }
+
+    .deleteAction {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .addressCard {
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .addressName {
+        font-size: 0.85rem;
+    }
+
+    .addressLine {
+        font-size: 0.75rem;
+    }
+
+    .formSection {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .formTitle {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .formLabel {
+        font-size: 0.8rem;
+    }
+
+    .formInput {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+
+    .submitButton,
+    .cancelButton {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .addAddressButton {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .cityWarning {
+        font-size: 0.7rem;
+        padding: 5px;
+    }
+
+    .warningIcon {
+        font-size: 11px;
+    }
+
+    .editAction {
+        padding: 5px 20px;
+        font-size: 0.75rem;
+    }
+
+    .deleteAction {
+        padding: 6px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Additional responsive improvements for better UX */
+@media (max-width: 768px) {
+    .addressCard:hover {
+        transform: none;
+    }
+
+    .addAddressButton:hover {
+        transform: none;
+    }
+
+    .submitButton:hover,
+    .cancelButton:hover {
+        transform: none;
+    }
+
+    .editAction:hover,
+    .deleteAction:hover {
+        transform: none;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .addressForm {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .formActions {
+        grid-column: span 2;
+        flex-direction: row;
+    }
+
+    .addressCard {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .addressContent {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .addressHeader {
+        margin-left: 15px;
+        margin-top: 0;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .formInput {
+        border-width: 1px;
+    }
+
+    .addressCard {
+        border-width: 1px;
+    }
+}
+
+/* Accessibility improvements for better responsive experience */
+@media (prefers-reduced-motion: reduce) {
+
+    .addressCard,
+    .addAddressButton,
+    .submitButton,
+    .cancelButton,
+    .editAction,
+    .deleteAction {
+        transition: none;
+    }
+}
+
+/* Dark mode support for better visibility */
+@media (prefers-color-scheme: dark) {
+    .formInput {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .formInput::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Print styles for better printing */
+@media print {
+    .profileInfo {
+        background-color: white;
+        color: black;
+        padding: 20px;
+    }
+
+    .addressCard {
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .addAddressButton,
+    .submitButton,
+    .cancelButton,
+    .editAction,
+    .deleteAction {
+        display: none;
+    }
+}

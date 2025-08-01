@@ -665,7 +665,13 @@ const Checkout = () => {
                         </h3>
                         <div className={styles.addressList}>
                             {addresses.length === 0 && !showForm ? (
-                                <div>No addresses found.</div>
+                                // <div>No addresses found.</div>
+                                <>
+                                    <button className={styles.addAddressButton} onClick={handleAddAddress}>
+                                        Add New Address <FontAwesomeIcon icon={faLocationDot} />
+                                    </button>
+
+                                </>
                             ) : (
                                 <>
                                     {isOutOfService && (
@@ -717,46 +723,47 @@ const Checkout = () => {
 
                                         </>
                                     )}
-                                    {showForm && (
-                                        <form className={styles.addressForm} onSubmit={handleFormSubmit}>
-                                            <div className={styles.formField}>
-                                                <label className={styles.formLabel}>Country</label>
-                                                <input type="text" name="country" value="Ireland" className={styles.formInput} disabled required />
-                                            </div>
-                                            <div className={styles.formField}>
-                                                <label className={styles.formLabel}>City</label>
-                                                <select name="city_id" value={addressFormData.city_id || ''} onChange={handleCitySelectChange} className={styles.formInput} required>
-                                                    <option className={styles.option} value="" disabled>Select a city</option>
-                                                    {cities.map(city => (
-                                                        <option className={styles.option} key={city.id} value={city.id}>{city.name}</option>
-                                                    ))}
-                                                </select>
-                                                {showCityWarning && (
-                                                    <div className={styles.cityWarning}>
-                                                        <FontAwesomeIcon icon={faExclamationTriangle} className={styles.warningIcon} />
-                                                        <span>Warning: we are not available in {selectedCity?.name} at the moment</span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                            <div className={styles.formField}>
-                                                <label className={styles.formLabel}>Street</label>
-                                                <input type="text" name="street" value={addressFormData.street} onChange={handleInputChange} className={styles.formInput} required />
-                                            </div>
-                                            <div className={styles.formField}>
-                                                <label className={styles.formLabel}>Floor</label>
-                                                <input type="text" name="floor" value={addressFormData.floor} onChange={handleInputChange} className={styles.formInput} required />
-                                            </div>
-                                            <div className={styles.formField}>
-                                                <label className={styles.formLabel}>Landmark (Optional)</label>
-                                                <input type="text" name="landmark" value={addressFormData.landmark} onChange={handleInputChange} className={styles.formInput} />
-                                            </div>
-                                            <div className={styles.formActions}>
-                                                <button type="submit" className={styles.submitButton}>{editingAddress ? 'Update Address' : 'Add Address'}</button>
-                                                <button type="button" className={styles.cancelButton} onClick={() => setShowForm(false)}>Cancel</button>
-                                            </div>
-                                        </form>
-                                    )}
+
                                 </>
+                            )}
+                            {showForm && (
+                                <form className={styles.addressForm} onSubmit={handleFormSubmit}>
+                                    <div className={styles.formField}>
+                                        <label className={styles.formLabel}>Country</label>
+                                        <input type="text" name="country" value="Ireland" className={styles.formInput} disabled required />
+                                    </div>
+                                    <div className={styles.formField}>
+                                        <label className={styles.formLabel}>City</label>
+                                        <select name="city_id" value={addressFormData.city_id || ''} onChange={handleCitySelectChange} className={styles.formInput} required>
+                                            <option className={styles.option} value="" disabled>Select a city</option>
+                                            {cities.map(city => (
+                                                <option className={styles.option} key={city.id} value={city.id}>{city.name}</option>
+                                            ))}
+                                        </select>
+                                        {showCityWarning && (
+                                            <div className={styles.cityWarning}>
+                                                <FontAwesomeIcon icon={faExclamationTriangle} className={styles.warningIcon} />
+                                                <span>Warning: we are not available in {selectedCity?.name} at the moment</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div className={styles.formField}>
+                                        <label className={styles.formLabel}>Street</label>
+                                        <input type="text" name="street" value={addressFormData.street} onChange={handleInputChange} className={styles.formInput} required />
+                                    </div>
+                                    <div className={styles.formField}>
+                                        <label className={styles.formLabel}>Floor</label>
+                                        <input type="text" name="floor" value={addressFormData.floor} onChange={handleInputChange} className={styles.formInput} required />
+                                    </div>
+                                    <div className={styles.formField}>
+                                        <label className={styles.formLabel}>Landmark (Optional)</label>
+                                        <input type="text" name="landmark" value={addressFormData.landmark} onChange={handleInputChange} className={styles.formInput} />
+                                    </div>
+                                    <div className={styles.formActions}>
+                                        <button type="submit" className={styles.submitButton}>{editingAddress ? 'Update Address' : 'Add Address'}</button>
+                                        <button type="button" className={styles.cancelButton} onClick={() => setShowForm(false)}>Cancel</button>
+                                    </div>
+                                </form>
                             )}
                         </div>
                     </div>

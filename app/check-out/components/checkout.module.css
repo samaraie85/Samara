@@ -519,14 +519,16 @@
     z-index: 11;
     cursor: pointer;
 }
-.paymentMethodItem{
+
+.paymentMethodItem {
     display: flex;
     align-items: start;
     justify-content: start;
     gap: 10px;
     margin-top: 20px;
 }
-.paymentMethodIcon{
+
+.paymentMethodIcon {
     width: 200px;
     height: 100px;
     background-color: white;
@@ -538,11 +540,13 @@
     border: 2px solid #CE9E00;
     position: relative;
 }
-.selectedCheck2{
+
+.selectedCheck2 {
     position: absolute;
     top: 10px;
     right: 10px;
 }
+
 .selectedCheckInner2 {
     width: 15px;
     height: 15px;
@@ -577,6 +581,11 @@
     .checkoutDividerRight {
         margin-top: 80px;
     }
+
+    .addressForm {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -610,11 +619,39 @@
     .extraFields {
         width: 100%;
     }
+
+    .addressForm {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .formActions {
+        grid-column: span 1;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .submitButton,
+    .cancelButton {
+        width: 100%;
+        text-align: center;
+    }
+
+    .paymentMethodItem {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .paymentMethodIcon {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 768px) {
     .checkout {
-        padding: 40px 40px;
+        padding: 40px 30px;
+        overflow-y: clip;
     }
 
     .checkout h2 {
@@ -635,16 +672,77 @@
         width: 100%;
         justify-content: space-between;
         margin-top: 15px;
+        gap: 10px;
     }
 
     .addAddressButton {
         width: 100%;
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    .addressForm {
+        gap: 12px;
+    }
+
+    .formField {
+        gap: 6px;
+    }
+
+    .formLabel {
+        font-size: 0.9rem;
+    }
+
+    .formInput {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .cityWarning {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .warningIcon {
+        font-size: 14px;
+    }
+
+    .orderSummary {
+        padding: 20px 15px;
+    }
+
+    .orderSummary h3 {
+        font-size: 1.3rem;
+    }
+
+    .orderSummaryRow {
+        font-size: 0.9rem;
+    }
+
+    .orderSummaryBuy {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+
+    .donateButton {
+        height: 55px;
+        padding: 10px 20px;
+    }
+
+    .donateButton span {
+        font-size: 1rem;
+    }
+
+    .verifyButton {
+        padding: 0 20px;
+        font-size: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
     .checkout {
         padding: 30px 20px;
+        overflow-y: clip;
     }
 
     .checkout h2 {
@@ -654,42 +752,87 @@
     .contactInfo h3,
     .addressInfo h3,
     .paymentDetails h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
     }
 
     .formGroup label {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .formGroup input {
-        padding: 12px;
-        font-size: 0.9rem;
+        padding: 10px;
+        font-size: 0.85rem;
     }
 
     .addressCard {
-        padding: 15px;
+        padding: 12px;
+        border-radius: 15px;
     }
 
     .addressName {
-        font-size: 1rem;
-    }
-
-    .addressLine {
         font-size: 0.9rem;
     }
 
+    .addressLine {
+        font-size: 0.8rem;
+    }
+
     .orderSummary h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .orderSummaryRow {
+        font-size: 0.85rem;
+    }
+
+    .orderSummaryTotal {
         font-size: 1rem;
+    }
+
+    .orderSummaryBuy {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+
+    .donateButton {
+        height: 50px;
+        padding: 8px 15px;
+    }
+
+    .donateButton span {
+        font-size: 0.9rem;
+    }
+
+    .extraFields {
+        gap: 8px;
+    }
+
+    .formInput {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    .verifyButton {
+        padding: 0 15px;
+        font-size: 0.75rem;
+    }
+
+    .formActions {
+        gap: 8px;
+    }
+
+    .submitButton,
+    .cancelButton {
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 360px) {
     .checkout {
         padding: 25px 15px;
+        overflow-y: clip;
     }
 
     .checkout h2 {
@@ -699,7 +842,8 @@
     .contactInfo h3,
     .addressInfo h3,
     .paymentDetails h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
     }
 
     .formGroup label {
@@ -707,27 +851,424 @@
     }
 
     .formGroup input {
-        padding: 10px;
+        padding: 8px;
         font-size: 0.8rem;
     }
 
     .addressCard {
-        padding: 12px;
+        padding: 10px;
+        border-radius: 12px;
     }
 
     .addressName {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .addressLine {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .orderSummary h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .orderSummaryRow {
+        font-size: 0.8rem;
+    }
+
+    .orderSummaryTotal {
         font-size: 0.9rem;
+    }
+
+    .orderSummaryBuy {
+        font-size: 0.85rem;
+        padding: 6px 0;
+    }
+
+    .donateButton {
+        height: 45px;
+        padding: 6px 12px;
+    }
+
+    .donateButton span {
+        font-size: 0.8rem;
+    }
+
+    .formInput {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+    }
+
+    .verifyButton {
+        padding: 0 12px;
+        font-size: 0.7rem;
+    }
+
+    .submitButton,
+    .cancelButton {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .cityWarning {
+        font-size: 0.75rem;
+        padding: 6px;
+    }
+
+    .warningIcon {
+        font-size: 12px;
+    }
+}
+
+/* Additional responsive improvements for better UX */
+@media (max-width: 768px) {
+    .addressCard:hover {
+        transform: none;
+    }
+
+    .addAddressButton:hover {
+        scale: 1.02;
+    }
+
+    .submitButton:hover,
+    .cancelButton:hover {
+        transform: none;
+    }
+
+    .orderSummaryBuy:hover {
+        transform: none;
+    }
+
+    .donateButton:hover {
+        transform: none;
+    }
+
+    /* Improve touch targets for mobile */
+    .formInput,
+    .submitButton,
+    .cancelButton,
+    .addAddressButton,
+    .orderSummaryBuy,
+    .donateButton {
+        min-height: 44px;
+        /* Minimum touch target size */
+    }
+
+    /* Better form field spacing on mobile */
+    .formField {
+        margin-bottom: 15px;
+    }
+
+    /* Improve select dropdown on mobile */
+    .formInput[type="text"],
+    .formInput[type="email"],
+    .formInput[type="tel"],
+    select.formInput {
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    /* Better focus states for mobile */
+    .formInput:focus {
+        outline: 2px solid #FFD54A;
+        outline-offset: 2px;
+    }
+
+    /* Improve button touch targets */
+    .addressActions .editAction,
+    .addressActions .deleteAction {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Better spacing for address cards on mobile */
+    .addressCard {
+        margin-bottom: 15px;
+    }
+
+    /* Improve city warning display on mobile */
+    .cityWarning {
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .checkout {
+        padding: 20px 30px;
+    }
+
+    .checkoutDivider {
+        gap: 20px;
+    }
+
+    .addressForm {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .formActions {
+        grid-column: span 2;
+        flex-direction: row;
+    }
+
+    /* Reduce vertical spacing in landscape */
+    .contactInfo,
+    .addressInfo,
+    .paymentDetails {
+        margin-bottom: 20px;
+    }
+
+    .orderSummary {
+        margin-top: 20px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .formInput {
+        border-width: 1px;
+    }
+
+    .addressCard {
+        border-width: 1px;
+    }
+}
+
+/* Accessibility improvements for better responsive experience */
+@media (prefers-reduced-motion: reduce) {
+
+    .addressCard,
+    .addAddressButton,
+    .submitButton,
+    .cancelButton,
+    .orderSummaryBuy,
+    .donateButton {
+        transition: none;
+    }
+}
+
+/* Dark mode support for better visibility */
+@media (prefers-color-scheme: dark) {
+    .formInput {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .formInput::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Print styles for better printing */
+@media print {
+    .checkout {
+        background-color: white;
+        color: black;
+        padding: 20px;
+    }
+
+    .orderSummary {
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .donateButton,
+    .addAddressButton,
+    .submitButton,
+    .cancelButton {
+        display: none;
+    }
+}
+
+/* Responsive styles for promo code section */
+@media (max-width: 768px) {
+    .promocodeGroup {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .promocodeGroup .formInput {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .verifyButton {
+        position: static;
+        width: 100%;
+        height: 44px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Improve promo code status message on mobile */
+    .extraFields>div[style*="display: flex"] {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+
+    .extraFields>div[style*="display: flex"] button {
+        align-self: flex-end;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* Better textarea on mobile */
+    .extraFields textarea.formInput {
+        min-height: 100px;
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .promocodeGroup {
+        gap: 8px;
+    }
+
+    .verifyButton {
+        font-size: 0.8rem;
+        height: 40px;
+    }
+
+    .extraFields>div[style*="display: flex"] {
+        padding: 12px;
+        font-size: 0.8rem;
+    }
+
+    .extraFields>div[style*="display: flex"] button {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    .extraFields textarea.formInput {
+        min-height: 80px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .verifyButton {
+        font-size: 0.75rem;
+        height: 38px;
+    }
+
+    .extraFields>div[style*="display: flex"] {
+        padding: 10px;
+        font-size: 0.75rem;
+    }
+
+    .extraFields textarea.formInput {
+        min-height: 70px;
+        font-size: 13px;
+    }
+}
+
+/* Modal popup responsive improvements */
+@media (max-width: 768px) {
+
+    /* Address confirmation modal responsive styles */
+    .checkout div[style*="position: fixed"] {
+        padding: 20px;
+    }
+
+    .checkout div[style*="position: fixed"]>div {
+        max-width: 95%;
+        width: 95%;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .checkout div[style*="position: fixed"] h3 {
+        font-size: 1.3rem;
+    }
+
+    .checkout div[style*="position: fixed"] p {
+        font-size: 0.9rem;
+    }
+
+    .checkout div[style*="position: fixed"] div[style*="display: grid"] {
+        gap: 8px;
+    }
+
+    .checkout div[style*="position: fixed"] div[style*="display: flex"] {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .checkout div[style*="position: fixed"] button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout div[style*="position: fixed"] {
+        padding: 15px;
+    }
+
+    .checkout div[style*="position: fixed"]>div {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .checkout div[style*="position: fixed"] h3 {
+        font-size: 1.2rem;
+    }
+
+    .checkout div[style*="position: fixed"] p {
+        font-size: 0.8rem;
+    }
+
+    .checkout div[style*="position: fixed"] div[style*="display: flex"] {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .checkout div[style*="position: fixed"] button {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 360px) {
+    .checkout div[style*="position: fixed"] {
+        padding: 10px;
+    }
+
+    .checkout div[style*="position: fixed"]>div {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .checkout div[style*="position: fixed"] h3 {
+        font-size: 1.1rem;
+    }
+
+    .checkout div[style*="position: fixed"] p {
+        font-size: 0.75rem;
+    }
+
+    .checkout div[style*="position: fixed"] div[style*="display: flex"] {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+    }
+
+    .checkout div[style*="position: fixed"] button {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        min-width: 70px;
     }
 }
